@@ -1,0 +1,151 @@
+:root {
+    --bg: #000000;
+    --fg: #ffffff;
+    --accent: #0047ff; /* Bold Electric Blue */
+    --border-thin: 1px solid rgba(255,255,255,0.2);
+    --border-thick: 3px solid #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; text-transform: uppercase; }
+
+body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    letter-spacing: -0.02em;
+    overflow-x: hidden;
+}
+
+.noise {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://grainy-gradients.vercel.app/noise.svg');
+    opacity: 0.1; pointer-events: none; z-index: 9999;
+}
+
+/* Ticker Animation */
+.super-nav {
+    display: flex; border-bottom: var(--border-thin); height: 50px; align-items: center;
+}
+
+.exit-btn {
+    padding: 0 30px; border-right: var(--border-thin);
+    text-decoration: none; color: var(--fg); font-size: 12px; font-weight: bold;
+}
+
+.scrolling-ticker {
+    flex: 1; overflow: hidden; white-space: nowrap; font-size: 12px;
+}
+
+.scrolling-ticker p {
+    display: inline-block; padding-left: 100%;
+    animation: ticker 20s linear infinite;
+}
+
+@keyframes ticker { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
+
+/* Hero */
+.hero-section {
+    padding: 80px 40px; border-bottom: var(--border-thick);
+}
+
+.big-title {
+    font-size: clamp(4rem, 15vw, 12rem); line-height: 0.85; font-weight: 900;
+}
+
+.hero-sub {
+    display: flex; justify-content: space-between; margin-top: 40px;
+    font-size: 14px; font-weight: bold; color: #888;
+}
+
+/* Experience List */
+.work-strip { border-bottom: var(--border-thin); }
+.strip-header { padding: 20px 40px; font-size: 12px; color: var(--accent); }
+
+.work-item {
+    display: flex; padding: 40px; border-top: var(--border-thin);
+    transition: background 0.3s; cursor: crosshair;
+}
+
+/* Brutalist Timeline Column */
+.timeline-box {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: var(--fg);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    margin-right: 40px;
+    line-height: 1.2;
+}
+
+.timeline-box .arrow {
+    color: var(--accent);
+    font-size: 14px;
+    margin: 2px 0;
+}
+
+.timeline-box .end {
+    opacity: 0.5;
+}
+
+/* Hover State Adjustment */
+.work-item:hover .timeline-box {
+    border-right-color: var(--accent);
+}
+
+.work-item:hover .timeline-box .end {
+    opacity: 1;
+    color: var(--fg);
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .timeline-box {
+        width: 100px;
+        margin-right: 20px;
+        font-size: 9px;
+    }
+}
+
+.work-item:hover { background: #111; color: var(--accent); }
+.year { width: 150px; font-size: 40px; font-weight: 200; }
+.work-info h3 { font-size: 24px; font-weight: 800; }
+.work-info p { font-size: 14px; opacity: 0.6; }
+
+/* Grid Layout */
+.mid-grid { display: grid; grid-template-columns: 1fr 1.5fr; border-bottom: var(--border-thick); }
+
+.info-box { padding: 40px; border-right: var(--border-thin); }
+.info-box h3 { font-size: 12px; margin-bottom: 20px; color: var(--accent); }
+.toolkit ul { list-style: none; font-size: 18px; font-weight: bold; line-height: 1.8; }
+
+.project-card { 
+    text-decoration: none; color: inherit; background: var(--accent); 
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+.project-card h2 { font-size: 40px; line-height: 1; font-weight: 900; }
+.view-link { font-weight: bold; margin-top: 20px; display: block; }
+
+/* Massive Footer */
+.massive-footer { padding: 100px 40px; text-align: left; }
+.massive-footer p { font-size: 14px; font-weight: bold; }
+.giant-email {
+    font-size: clamp(2rem, 10vw, 8rem); font-weight: 900; text-decoration: none;
+    color: var(--fg); line-height: 1; transition: 0.3s;
+}
+.giant-email:hover { color: var(--accent); -webkit-text-stroke: 2px var(--fg); color: transparent; }
+
+.footer-meta {
+    display: flex; justify-content: space-between; margin-top: 80px;
+    font-size: 12px; opacity: 0.4;
+}
+
+@media (max-width: 768px) {
+    .mid-grid { grid-template-columns: 1fr; }
+    .hero-sub { flex-direction: column; gap: 10px; }
+    .year { width: 60px; font-size: 20px; }
+}
