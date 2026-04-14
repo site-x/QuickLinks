@@ -1,0 +1,234 @@
+:root {
+    --void: #020202;
+    --chrome: #ffffff;
+    --accent: #ff0000;
+    --faded: rgba(255, 255, 255, 0.4);
+    --venom: #ffffff;
+}
+
+#web-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Sits between the stars and the buttons */
+    pointer-events: none; /* Allows you to click through the webs */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--void);
+    color: var(--chrome);
+    font-family: 'Inter', -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background Engine */
+.space-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #020202 100%);
+    z-index: -2;
+}
+
+.starfield {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 2px);
+    background-size: 250px 250px;
+    opacity: 0.15;
+    animation: starSwim 100s infinite linear;
+}
+
+.binary-stream {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.binary-unit {
+    position: absolute;
+    color: var(--accent);
+    font-family: monospace;
+    opacity: 0;
+    animation: driftFall linear forwards;
+}
+
+/* Container & Profile */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 60px 24px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.profile-frame {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 25px;
+    border-radius: 32px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Typography & Glitch */
+h1 {
+    font-size: 1.1rem;
+    letter-spacing: 6px;
+    font-weight: 300;
+    margin-bottom: 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0; width: 100%; opacity: 0.7;
+}
+
+.glitch::before { color: #ff00c1; z-index: -1; animation: glitch 3s infinite; }
+.glitch::after { color: var(--accent); z-index: -2; animation: glitch 2s infinite reverse; }
+
+.tagline {
+    font-size: 0.7rem;
+    color: var(--faded);
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* Buttons */
+.link-grid { display: flex; flex-direction: column; gap: 12px; }
+
+.universal-btn {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 18px;
+    text-decoration: none;
+    color: var(--chrome);
+    overflow: hidden;
+    display: block;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    pointer-events: none;
+}
+
+.btn-content i { color: var(--accent); font-size: 1.1rem; }
+.btn-content span { font-size: 0.75rem; letter-spacing: 3px; font-weight: 300; }
+
+.btn-shimmer {
+    position: absolute;
+    top: 0; left: -100%; width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+    transition: 0.6s;
+}
+
+/* Desktop Only Interactions */
+@media (hover: hover) {
+    .universal-btn:hover { border-color: var(--accent); }
+    .universal-btn:hover .btn-shimmer { left: 100%; }
+}
+
+/* Mobile Active Feedback */
+.universal-btn:active {
+    background: rgba(0, 242, 255, 0.1);
+    transform: scale(0.96) !important;
+}
+
+footer { margin-top: 50px; opacity: 0.3; }
+.timestamp { font-size: 10px; letter-spacing: 2px; }
+
+/* Keyframes */
+@keyframes starSwim { from { background-position: 0 0; } to { background-position: 0 -1000px; } }
+@keyframes driftFall { 
+    0% { transform: translateY(-10vh); opacity: 0; }
+    15% { opacity: 0.3; }
+    85% { opacity: 0.3; }
+    100% { transform: translateY(110vh); opacity: 0; }
+}
+@keyframes glitch { 
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+/* Volume HUD */
+.volume-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+}
+
+#volume-slider {
+    width: 80px;
+    cursor: pointer;
+    accent-color: var(--accent); /* Makes the slider cyan */
+}
+
+#vol-icon {
+    font-size: 0.8rem;
+    color: var(--accent);
+}
+
+#vol-percentage {
+    font-size: 9px;
+    font-family: monospace;
+    color: var(--faded);
+    min-width: 25px;
+}
+
+/* Hide on very small screens to save space if needed */
+@media (max-width: 350px) {
+    .volume-control {
+        bottom: 10px;
+        right: 10px;
+        transform: scale(0.8);
+    }
+}
+
