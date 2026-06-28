@@ -3,147 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEET ELIJAH :D</title>
+    <meta name="theme-color" content="#06060a">
+    <meta name="description" content="Quick links, portfolio, and socials for Elijah R. Flores.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Elijah R. Flores | Quicklinks">
+    <meta property="og:description" content="Portfolio, socials, and contact links for Elijah R. Flores.">
+    <meta property="og:image" content="optimized/og-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Elijah R. Flores | Quicklinks">
+    <meta name="twitter:description" content="Portfolio, socials, and contact links for Elijah R. Flores.">
+    <meta name="twitter:image" content="optimized/og-preview.jpg">
+    <title>Elijah R. Flores | Quicklinks</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="space-background">
-        <div class="space-background">
-            <div class="starfield"></div>
-            <canvas id="web-canvas"></canvas>
-            <div class="binary-stream"></div>
-        </div>
+        <div class="city-glow"></div>
+        <div class="halftone"></div>
+        <div class="web-grid"></div>
+        <div class="starfield"></div>
+        <canvas id="web-canvas" aria-hidden="true"></canvas>
+        <div class="binary-stream" aria-hidden="true"></div>
     </div>
 
-    <audio id="bg-music" loop>
+    <audio id="bg-music" preload="auto" autoplay loop>
         <source src="bgmusic.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="volume-control">
-        <i class="fa-solid fa-volume-low" id="vol-icon"></i>
-        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.15">
-        <span id="vol-percentage">15%</span>
-    </div>
-
     <main class="container">
         <header class="profile">
+            <div class="signal-pill">
+                <span class="pulse-dot"></span>
+                Multiverse Link Hub
+            </div>
             <div class="profile-frame">
+                <div class="music-visualizer" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
                 <img src="profile.jpg" alt="Elijah Flores" class="profile-img">
             </div>
             <h1 class="glitch" data-text="ELIJAH R. FLORES">ELIJAH R. FLORES</h1>
-            <p class="tagline">Creatives | Marketing | Web</p>
+            <p class="tagline">Multimedia | Marketing | Web</p>
+            <div class="profile-stats" aria-label="Focus areas">
+                <span>Design</span>
+                <span>Content</span>
+                <span>Web</span>
+            </div>
+            <div class="volume-control" id="volume-control" aria-label="Background music controls">
+                <button class="music-toggle" id="music-toggle" type="button" aria-label="Pause music">
+                    <i class="fa-solid fa-pause" id="vol-icon"></i>
+                </button>
+                <div class="volume-details">
+                    <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.15" aria-label="Volume">
+                    <span id="vol-percentage">15%</span>
+                </div>
+            </div>
         </header>
 
-        <section class="slideshow-container">
+        <section class="slideshow-container" aria-label="Portfolio preview">
+            <div class="section-kicker">
+                <span>Featured Work</span>
+                <span class="live-wire"></span>
+            </div>
             <div class="slider-wrapper">
                 <div class="slide active">
-                    <img src="Portfolio-Post_05.png" alt="Design Project 1">
+                    <picture>
+                        <source srcset="optimized/Portfolio-Post_05-mobile.jpg" media="(max-width: 700px)">
+                        <img src="optimized/Portfolio-Post_05-mobile.jpg" alt="Design Project 1" loading="eager" decoding="async" fetchpriority="high">
+                    </picture>
                     <div class="slide-caption">About me</div>
                 </div>
                 <div class="slide">
-                    <img src="Portfolio-Post_01.png" alt="Design Project 3">
+                    <picture>
+                        <source srcset="optimized/Portfolio-Post_01-mobile.jpg" media="(max-width: 700px)">
+                        <img src="optimized/Portfolio-Post_01-mobile.jpg" alt="Design Project 2" loading="lazy" decoding="async">
+                    </picture>
                     <div class="slide-caption">Brand & Companies I worked with</div>
                 </div>
                 <div class="slide">
-                    <img src="Portfolio-Post_02.png" alt="Design Project 2">
+                    <picture>
+                        <source srcset="optimized/Portfolio-Post_02-mobile.jpg" media="(max-width: 700px)">
+                        <img src="optimized/Portfolio-Post_02-mobile.jpg" alt="Design Project 3" loading="lazy" decoding="async">
+                    </picture>
                     <div class="slide-caption">Social Media Posts</div>
                 </div>
                 <div class="slide">
-                    <img src="Portfolio-Post_03.png" alt="Design Project 3">
+                    <picture>
+                        <source srcset="optimized/Portfolio-Post_03-mobile.jpg" media="(max-width: 700px)">
+                        <img src="optimized/Portfolio-Post_03-mobile.jpg" alt="Design Project 4" loading="lazy" decoding="async">
+                    </picture>
                     <div class="slide-caption">Social Media Reels</div>
                 </div>
                 <div class="slide">
-                    <img src="Portfolio-Post_04.png" alt="Design Project 3">
+                    <picture>
+                        <source srcset="optimized/Portfolio-Post_04-mobile.jpg" media="(max-width: 700px)">
+                        <img src="optimized/Portfolio-Post_04-mobile.jpg" alt="Design Project 5" loading="lazy" decoding="async">
+                    </picture>
                     <div class="slide-caption">Tools I use</div>
                 </div>
                 <div class="slide">
-                    <img src="Portfolio-Post_06.png" alt="Design Project 3">
+                    <picture>
+                        <source srcset="optimized/Portfolio-Post_06-mobile.jpg" media="(max-width: 700px)">
+                        <img src="optimized/Portfolio-Post_06-mobile.jpg" alt="Design Project 6" loading="lazy" decoding="async">
+                    </picture>
                     <div class="slide-caption">Brandings</div>
                 </div>
             </div>
 
-            <button class="slider-btn prev" id="prevSlide">
+            <button class="slider-btn prev" id="prevSlide" type="button" aria-label="Previous slide">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
 
-            <button class="slider-btn next" id="nextSlide">
+            <button class="slider-btn next" id="nextSlide" type="button" aria-label="Next slide">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
 
-            <div class="slider-dots">
-                <span class="dot active"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+            <div class="slider-dots" aria-label="Slide navigation">
+                <button class="dot active" type="button" aria-label="Show slide 1"></button>
+                <button class="dot" type="button" aria-label="Show slide 2"></button>
+                <button class="dot" type="button" aria-label="Show slide 3"></button>
+                <button class="dot" type="button" aria-label="Show slide 4"></button>
+                <button class="dot" type="button" aria-label="Show slide 5"></button>
+                <button class="dot" type="button" aria-label="Show slide 6"></button>
             </div>
         </section>
 
-        <nav class="link-grid">
+        <nav class="link-grid" aria-label="Quick links">
             <a href="https://elijahportfolio.xyz" class="universal-btn" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
-                    <i class="fa-solid fa-user-astronaut"></i>
-                    <span>WEBSITE PORTFOLIO</span>
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Website Portfolio</span>
                 </div>
-                <div class="btn-shimmer"></div>
-            </a>
-
-            <a href="https://drive.google.com/drive/folders/1h9WODmIMT0x7XZox7Kf0t2_rFVU8Q3ay?usp=drive_link" class="universal-btn" target="_blank" rel="noopener noreferrer">
-                <div class="btn-content">
-                    <i class="fa-brands fa-google-drive"></i>
-                    <span>GDRIVE PORTFOLIO</span>
-                </div>
+                <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
                 <div class="btn-shimmer"></div>
             </a>
 
             <a href="https://www.linkedin.com/in/elijahlordandreiflores/" class="universal-btn" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i class="fa-brands fa-linkedin-in"></i>
-                    <span>LINKEDIN</span>
+                    <span>LinkedIn</span>
                 </div>
+                <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
                 <div class="btn-shimmer"></div>
             </a>
+        </nav>
 
-            <a href="https://www.instagram.com/primelordd" class="universal-btn" target="_blank" rel="noopener noreferrer">
-                <div class="btn-content">
-                    <i class="fa-brands fa-instagram"></i>
-                    <span>INSTAGRAM</span>
-                </div>
-                <div class="btn-shimmer"></div>
+        <nav class="social-grid" aria-label="Social links">
+            <a href="https://www.instagram.com/primelordd" class="social-chip" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+                <span>Instagram</span>
             </a>
 
-            <a href="https://www.facebook.com/dreiixx1/" class="universal-btn" target="_blank" rel="noopener noreferrer">
-                <div class="btn-content">
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <span>FACEBOOK</span>
-                </div>
-                <div class="btn-shimmer"></div>
+            <a href="https://www.facebook.com/dreiixx1/" class="social-chip" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+                <span>Facebook</span>
             </a>
 
-            <a href="https://wa.me/639694589629" class="universal-btn" target="_blank" rel="noopener noreferrer">
-                <div class="btn-content">
-                    <i class="fa-brands fa-whatsapp"></i>
-                    <span>+63 969 458 9629</span>
-                </div>
-                <div class="btn-shimmer"></div>
+            <a href="https://wa.me/639694589629" class="social-chip" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>WhatsApp</span>
             </a>
+        </nav>
 
+        <nav class="link-grid contact-grid" aria-label="Contact links">
             <a href="mailto:elijahflores0204@gmail.com" class="universal-btn" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i class="fa-solid fa-envelope"></i>
                     <span>elijahflores0204@gmail.com</span>
                 </div>
+                <i class="fa-solid fa-paper-plane btn-arrow"></i>
                 <div class="btn-shimmer"></div>
             </a>
         </nav>
 
         <footer>
-            <p class="timestamp">"There's a first time for everything right?" | Spider-Man: Across the Spider-Verse</p>
+            <p class="timestamp">"There's a first time for everything right?"</p>
             <p class="timestamp">EST. 2026 // ALL SYSTEMS ACTIVE</p>
         </footer>
     </main>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
 
     <script src="script.js"></script>
     <script src="spider-web.js"></script>
