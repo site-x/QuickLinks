@@ -2,3 +2,4 @@
 # full-size originals of profile photos (site uses images/profile/web/)
 images/profile/*.jpg
 images/profile/*.png
+.wrangler/
