@@ -17,6 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const storedVolume = Number(localStorage.getItem('quicklinks_music_volume'));
     const targetVolume = Number.isFinite(storedVolume) && storedVolume > 0 ? storedVolume : 0.15;
     let musicEnabled = true;
+    const DEFAULT_TRACK = 'bgmusic.mp3';
+    let currentTrack = DEFAULT_TRACK;
+    let fadeTimer = null;
+    let volumeGain = null;
+
+    // iOS ignores audio.volume (read-only), so once the Web Audio graph exists the slider drives a GainNode instead.
+    function setVolume(v) {
+        const level = Math.max(0, Math.min(1, Number(v) || 0));
+        if (volumeGain && audioContext) {
+            bgMusic.volume = 1;
+            volumeGain.gain.setTargetAtTime(level, audioContext.currentTime, 0.02);
+        } else {
+            bgMusic.volume = level;
+        }
+    }
 
     hoverSound.volume = isMobilePointer ? 0.08 : 0.16;
     hoverSound.preload = 'auto';
@@ -24,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     clickSound.volume = isMobilePointer ? 0.12 : 0.2;
     clickSound.preload = 'auto';
     clickSound.load();
-    document.body.classList.add('is-loading');
+    if (document.querySelector('.slide img')) document.body.classList.add('is-loading');
 
     window.quicklinkAudio = {
         playClick(type = 'link') {
@@ -35,7 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Block save-image routes on pictures: right-click / long-press menu and dragging out
+    document.addEventListener('contextmenu', (e) => { if (e.target.closest('img, .profile-frame, .badge-marquee')) e.preventDefault(); });
+    document.addEventListener('dragstart', (e) => { if (e.target.closest('img')) e.preventDefault(); });
+
     initMusic();
+    window.addEventListener('themechange', () => updateMusicUi());
+    initBeatVisualizer();
     warmAudioEngine();
     initImages();
     initButtons();
@@ -54,14 +75,25 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!bgMusic || !volumeSlider || !musicToggle) return;
 
         volumeSlider.value = String(targetVolume);
-        bgMusic.volume = targetVolume;
+        setVolume(targetVolume);
         bgMusic.muted = false;
+        currentTrack = window.quicklinkMusic || DEFAULT_TRACK;
+        if (currentTrack !== DEFAULT_TRACK) bgMusic.src = currentTrack;
         bgMusic.load();
+        window.addEventListener('themechange', () => switchTrack(window.quicklinkMusic));
         updateMusicUi();
 
         bgMusic.play()
             .then(() => updateMusicUi(targetVolume))
-            .catch(() => updateMusicUi(targetVolume));
+            .catch(() => {
+                updateMusicUi(targetVolume);
+                // Browser blocked autoplay: start on the first interaction, unless the user paused meanwhile.
+                const startOnGesture = () => {
+                    if (musicEnabled && bgMusic.paused) bgMusic.play().then(() => updateMusicUi()).catch(() => {});
+                    ['pointerdown', 'keydown', 'touchstart'].forEach((evt) => document.removeEventListener(evt, startOnGesture));
+                };
+                ['pointerdown', 'keydown', 'touchstart'].forEach((evt) => document.addEventListener(evt, startOnGesture, { passive: true }));
+            });
 
         musicToggle.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -75,8 +107,146 @@ document.addEventListener('DOMContentLoaded', () => {
                 musicEnabled = true;
                 bgMusic.play().catch(() => {});
             }
-            bgMusic.volume = nextVolume;
+            setVolume(nextVolume);
             updateMusicUi(nextVolume);
+        });
+    }
+
+    function initBeatVisualizer() {
+        const bars = document.querySelectorAll('.music-visualizer span');
+        const frame = document.querySelector('.profile-frame');
+        if (!bgMusic || !bars.length || prefersReducedMotion) return;
+
+        bars.forEach((bar, i) => bar.style.setProperty('--i', i));
+        let analyser = null;
+        let data = null;
+        const levels = new Array(bars.length).fill(0);
+        const avg = new Array(bars.length).fill(0.1);
+        const pk = new Array(bars.length).fill(0.3);
+        let bassAvg = 0.2;
+        let beat = 0;
+        let lastBeat = 0;
+        let silentFrames = 0;
+
+        function setup() {
+            if (analyser) return;
+            try {
+                audioContext ??= new (window.AudioContext || window.webkitAudioContext)();
+                // Routing through a suspended context would silence the music, so wait for a running one.
+                if (audioContext.state !== 'running') {
+                    audioContext.resume().then(() => { if (audioContext.state === 'running') setup(); }).catch(() => {});
+                    return;
+                }
+                const source = audioContext.createMediaElementSource(bgMusic);
+                analyser = audioContext.createAnalyser();
+                analyser.fftSize = 2048;
+                analyser.smoothingTimeConstant = 0.4;
+                // analyser taps the raw signal (so bars ignore the volume slider); the gain node sets loudness
+                volumeGain = audioContext.createGain();
+                const silent = audioContext.createGain();
+                silent.gain.value = 0;
+                source.connect(analyser);
+                analyser.connect(silent);
+                silent.connect(audioContext.destination);
+                source.connect(volumeGain);
+                volumeGain.connect(audioContext.destination);
+                setVolume(Number(volumeSlider?.value) || targetVolume);
+                data = new Uint8Array(analyser.frequencyBinCount);
+                requestAnimationFrame(tick);
+            } catch {
+                analyser = null;
+            }
+        }
+
+        function tick() {
+            requestAnimationFrame(tick);
+            if (audioContext.state === 'suspended' && !bgMusic.paused) audioContext.resume().catch(() => {});
+            analyser.getByteFrequencyData(data);
+
+            // log-spaced bands over ~50Hz-8kHz
+            const binHz = audioContext.sampleRate / analyser.fftSize;
+            const lo = 50, hi = 8000;
+            let frameMax = 0;
+            const raw = [];
+            for (let i = 0; i < bars.length; i++) {
+                const f0 = lo * Math.pow(hi / lo, i / bars.length);
+                const f1 = lo * Math.pow(hi / lo, (i + 1) / bars.length);
+                const b0 = Math.max(1, Math.floor(f0 / binHz));
+                const b1 = Math.max(b0 + 1, Math.ceil(f1 / binHz));
+                let sum = 0;
+                for (let b = b0; b < b1; b++) sum += data[b];
+                const v = sum / (b1 - b0) / 255;
+                raw.push(v);
+                frameMax = Math.max(frameMax, v);
+            }
+
+            // kick / bass onset: bass energy jumping above its recent average
+            const bassTop = Math.ceil(150 / binHz);
+            let bass = 0;
+            for (let b = Math.floor(40 / binHz); b <= bassTop; b++) bass = Math.max(bass, data[b] / 255);
+            const now = performance.now();
+            if (bass - bassAvg > 0.09 && now - lastBeat > 140) {
+                beat = 1;
+                lastBeat = now;
+            }
+            bassAvg += (bass - bassAvg) * 0.06;
+            beat *= 0.86;
+
+            // live only once real signal is seen (CORS/file:// gives silence -> CSS fallback)
+            if (frameMax > 0.01) {
+                silentFrames = 0;
+                document.body.classList.add('viz-live');
+            } else if (++silentFrames > 90 && !bgMusic.paused) {
+                document.body.classList.remove('viz-live');
+            }
+            if (bgMusic.paused) document.body.classList.remove('viz-live');
+
+            // each band is judged against its own history, so steady/bass-heavy bands don't pin at full
+            bars.forEach((bar, i) => {
+                avg[i] += (raw[i] - avg[i]) * 0.04;
+                pk[i] = Math.max(raw[i], pk[i] * 0.992, avg[i] + 0.08);
+                const rel = (raw[i] - avg[i]) / (pk[i] - avg[i] + 0.02);
+                const target = Math.max(0.05, Math.min(1, 0.1 + rel * 0.75 + beat * 0.3));
+                levels[i] += (target - levels[i]) * (target > levels[i] ? 0.7 : 0.22);
+                bar.style.setProperty('--lvl', levels[i].toFixed(3));
+            });
+            frame?.style.setProperty('--bass', beat.toFixed(3));
+        }
+
+        bgMusic.addEventListener('play', setup);
+        if (!bgMusic.paused) setup();
+        ['pointerdown', 'keydown'].forEach((evt) => {
+            document.addEventListener(evt, () => { setup(); audioContext?.resume?.().catch(() => {}); }, { passive: true });
+        });
+    }
+
+    // Each theme has its own track. A paused player stays paused across theme changes.
+    function switchTrack(path) {
+        if (!bgMusic || !path || path === currentTrack) return;
+        currentTrack = path;
+        // The <audio autoplay> attribute would restart playback after load(); only play when the user has music on.
+        bgMusic.autoplay = false;
+        bgMusic.src = path;
+        bgMusic.load();
+        if (!musicEnabled) {
+            bgMusic.pause();
+            updateMusicUi();
+            return;
+        }
+        const goal = () => Number(volumeSlider?.value) || targetVolume;
+        clearInterval(fadeTimer);
+        setVolume(0);
+        bgMusic.play().then(() => {
+            let step = 0;
+            fadeTimer = setInterval(() => {
+                step += 1;
+                setVolume(Math.min(goal(), goal() * (step / 12)));
+                if (step >= 12) clearInterval(fadeTimer);
+            }, 50);
+            updateMusicUi();
+        }).catch(() => {
+            setVolume(goal());
+            updateMusicUi();
         });
     }
 
@@ -94,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         musicEnabled = true;
         localStorage.setItem('quicklinks_music_enabled', 'true');
-        bgMusic.volume = nextVolume;
+        setVolume(nextVolume);
         bgMusic.play().then(() => updateMusicUi(nextVolume)).catch(() => {});
         updateMusicUi(nextVolume);
     }
@@ -106,10 +276,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('music-playing', musicEnabled && volume > 0 && !bgMusic?.paused);
 
         if (!musicEnabled || volume === 0 || bgMusic?.paused) {
-            volIcon.className = 'fa-solid fa-play';
+            volIcon.className = `fa-solid ${window.quicklinkIcons?.play ?? 'fa-play'}`;
             musicToggle?.setAttribute('aria-label', 'Play music');
         } else {
-            volIcon.className = 'fa-solid fa-pause';
+            volIcon.className = `fa-solid ${window.quicklinkIcons?.pause ?? 'fa-pause'}`;
             musicToggle?.setAttribute('aria-label', 'Pause music');
         }
     }
@@ -143,22 +313,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 hoverSound.play().catch(() => {});
             });
 
-            btn.addEventListener('mousemove', (event) => {
-                if (prefersReducedMotion || isMobilePointer) return;
-
-                const rect = btn.getBoundingClientRect();
-                const x = event.clientX - rect.left - rect.width / 2;
-                const y = event.clientY - rect.top - rect.height / 2;
-                btn.style.transform = `translate(${x * 0.055}px, ${y * 0.08}px) scale(1.015)`;
-            });
-
-            btn.addEventListener('mouseleave', () => {
-                btn.style.transform = '';
-            });
-
             btn.addEventListener('click', (event) => {
                 window.quicklinkAudio.playClick('link');
-                if (!prefersReducedMotion) spawnClickSparks(event.clientX, event.clientY);
             });
         });
     }
@@ -207,24 +363,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function spawnBinary() {
         if (!stream) return;
+        const bg = window.quicklinkBg || {};
+        const glyphs = bg.glyphs || [];
+        if (!glyphs.length) return;
 
         const unit = document.createElement('span');
-        const glyphs = ['01', '10', '2099', '42', 'zap', 'web'];
-        const glyph = glyphs[Math.floor(Math.random() * glyphs.length)];
-
         unit.className = 'binary-unit';
-        unit.innerText = glyph === 'zap' ? 'ZAP' : glyph;
+        unit.innerText = glyphs[Math.floor(Math.random() * glyphs.length)];
+        if (bg.colors) {
+            const color = bg.colors[Math.floor(Math.random() * bg.colors.length)];
+            unit.style.color = color;
+            unit.style.textShadow = `0 0 14px ${color}`;
+        }
         unit.style.left = `${Math.random() * 100}vw`;
         unit.style.setProperty('--drift-x', `${Math.random() * 90 - 45}px`);
         unit.style.setProperty('--spin', `${Math.random() * 28 - 14}deg`);
         unit.style.fontSize = `${Math.random() * 10 + 10}px`;
         unit.style.animationDuration = `${Math.random() * 5 + 7}s`;
         unit.style.animationDelay = `${Math.random() * 0.8}s`;
-
-        if (glyph === 'web') {
-            unit.innerText = '///';
-            unit.style.color = 'rgba(255,255,255,0.72)';
-        }
 
         stream.appendChild(unit);
         setTimeout(() => unit.remove(), 14000);

@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#06060a">
-    <meta name="description" content="Quick links, portfolio, and socials for Elijah R. Flores.">
+    <meta name="description" content="Quick links, work, and socials for Elijah R. Flores.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Elijah R. Flores | Quicklinks">
-    <meta property="og:description" content="Portfolio, socials, and contact links for Elijah R. Flores.">
-    <meta property="og:image" content="optimized/og-preview.jpg">
+    <meta property="og:description" content="Work, socials, and contact links for Elijah R. Flores.">
+    <meta property="og:image" content="images/optimized/og-preview.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Elijah R. Flores | Quicklinks">
-    <meta name="twitter:description" content="Portfolio, socials, and contact links for Elijah R. Flores.">
-    <meta name="twitter:image" content="optimized/og-preview.jpg">
+    <meta name="twitter:description" content="Work, socials, and contact links for Elijah R. Flores.">
+    <meta name="twitter:image" content="images/optimized/og-preview.jpg">
     <title>Elijah R. Flores | Quicklinks</title>
+    <script>try{var t=localStorage.getItem("quicklinks_theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -27,30 +28,39 @@
         <div class="binary-stream" aria-hidden="true"></div>
     </div>
 
+    <div class="theme-modal" id="theme-modal" hidden>
+        <div class="theme-backdrop" data-close></div>
+        <div class="theme-dialog" role="dialog" aria-modal="true" aria-labelledby="theme-title">
+            <div class="theme-dialog-head">
+                <h2 id="theme-title">Choose a theme</h2>
+                <button class="theme-close" type="button" aria-label="Close" data-close><i data-icon="close" class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="theme-menu" id="theme-menu" role="radiogroup" aria-label="Theme"></div>
+        </div>
+    </div>
+
     <audio id="bg-music" preload="auto" autoplay loop>
         <source src="bgmusic.mp3" type="audio/mpeg">
     </audio>
 
     <main class="container">
         <header class="profile">
+            <svg class="web-corner tl" viewBox="0 0 120 120" aria-hidden="true"><path d="M0 0 L120 0 M0 0 L110 45 M0 0 L85 85 M0 0 L45 110 M0 0 L0 120 M30 0 Q26 22 0 30 M58 0 Q48 48 0 58 M90 0 Q72 72 0 90" transform="translate(0 0)"/></svg><svg class="web-corner tr" viewBox="0 0 120 120" aria-hidden="true"><path d="M0 0 L120 0 M0 0 L110 45 M0 0 L85 85 M0 0 L45 110 M0 0 L0 120 M30 0 Q26 22 0 30 M58 0 Q48 48 0 58 M90 0 Q72 72 0 90" transform="translate(0 0)"/></svg><svg class="web-corner bl" viewBox="0 0 120 120" aria-hidden="true"><path d="M0 0 L120 0 M0 0 L110 45 M0 0 L85 85 M0 0 L45 110 M0 0 L0 120 M30 0 Q26 22 0 30 M58 0 Q48 48 0 58 M90 0 Q72 72 0 90" transform="translate(0 0)"/></svg><svg class="web-corner br" viewBox="0 0 120 120" aria-hidden="true"><path d="M0 0 L120 0 M0 0 L110 45 M0 0 L85 85 M0 0 L45 110 M0 0 L0 120 M30 0 Q26 22 0 30 M58 0 Q48 48 0 58 M90 0 Q72 72 0 90" transform="translate(0 0)"/></svg><div class="theme-emblem spider"><svg class="hanging-spider" viewBox="0 0 34 120" aria-hidden="true"><line class="thread" x1="17" y1="0" x2="17" y2="92"/><g transform="translate(17 104)"><path class="legs" d="M-4 -2 L-13 -9 L-16 -2 M-4 1 L-14 3 L-15 10 M-4 4 L-10 12 M4 -2 L13 -9 L16 -2 M4 1 L14 3 L15 10 M4 4 L10 12"/><ellipse class="bug" rx="6" ry="8" cy="2"/><circle class="bug" r="4" cy="-8"/><path class="mark" d="M0 -2 L2.2 3 L0 8 L-2.2 3 Z"/></g></svg></div><div class="theme-emblem bat"><svg viewBox="0 0 100 50" aria-hidden="true"><path fill="#ffc400" d="M50 4 L56 14 Q62 10 70 12 Q82 6 98 20 Q86 20 82 28 Q80 24 74 26 Q68 28 66 36 Q60 30 56 34 L50 46 L44 34 Q40 30 34 36 Q32 28 26 26 Q20 24 18 28 Q14 20 2 20 Q18 6 30 12 Q38 10 44 14 Z"/></svg></div><div class="theme-emblem reactor"><svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="27" fill="#061a22" stroke="#6fe3ff" stroke-width="2"/><circle cx="30" cy="30" r="19" fill="none" stroke="#6fe3ff" stroke-width="2" stroke-dasharray="7 4"/><circle cx="30" cy="30" r="9" fill="#e9fbff"/><circle cx="30" cy="30" r="13" fill="none" stroke="#6fe3ff" stroke-width="1.5"/></svg></div>
             <div class="signal-pill">
                 <span class="pulse-dot"></span>
-                Multiverse Link Hub
+                Quick Links
             </div>
-            <div class="profile-frame">
-                <div class="music-visualizer" aria-hidden="true">
-                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                    <span></span><span></span><span></span><span></span><span></span><span></span>
-                </div>
-                <img src="profile.jpg" alt="Elijah Flores" class="profile-img">
+            <div class="profile-stage">
+                <div class="profile-frame">
+                <img src="images/profile/web/default.jpg" alt="Elijah Flores" class="profile-img" decoding="async">
+                <img class="profile-img-fx" alt="" aria-hidden="true" decoding="async">
+            </div>
+                <button class="theme-step prev" id="theme-prev" type="button" aria-label="Previous theme"><i data-icon="prev" class="fa-solid fa-chevron-left"></i></button>
+                    <button class="theme-step next" id="theme-next" type="button" aria-label="Next theme"><i data-icon="next" class="fa-solid fa-chevron-right"></i></button>
             </div>
             <h1 class="glitch" data-text="ELIJAH R. FLORES">ELIJAH R. FLORES</h1>
-            <div class="profile-stats" aria-label="Focus areas">
-                <span>Multimedia</span>
-                <span>Marketing</span>
-                <span>Web</span>
-            </div>
-            <div class="volume-control" id="volume-control" aria-label="Background music controls">
+            <p class="profile-bio" id="profile-bio">Multimedia creator, marketer and web developer building brands, content and websites.</p>
+                        <div class="volume-control" id="volume-control" aria-label="Background music controls">
                 <button class="music-toggle" id="music-toggle" type="button" aria-label="Pause music">
                     <i class="fa-solid fa-pause" id="vol-icon"></i>
                 </button>
@@ -59,8 +69,13 @@
                     <span id="vol-percentage">15%</span>
                 </div>
             </div>
+        <div class="badge-marquee" aria-label="Credly badges">
+            <div class="music-visualizer" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+                        <div class="badge-viewport"><div class="badge-track"><span class="badge-item" title="Google AI Professional Certificate — Coursera"><img src="images/badges/google-ai-professional-certificate.png" alt="Google AI Professional Certificate" loading="lazy" decoding="async"></span><span class="badge-item" title="Full-Stack Developer — University of London on Coursera"><img src="images/badges/full-stack-developer.png" alt="Full-Stack Developer" loading="lazy" decoding="async"></span><span class="badge-item" title="GitHub Advanced Security — GitHub"><img src="images/badges/github-advanced-security.png" alt="GitHub Advanced Security" loading="lazy" decoding="async"></span><span class="badge-item" title="Marketing Funnel Essentials — Basis Technologies"><img src="images/badges/marketing-funnel-essentials.png" alt="Marketing Funnel Essentials" loading="lazy" decoding="async"></span><span class="badge-item" title="Google AI Professional Certificate — Coursera"><img src="images/badges/google-ai-professional-certificate.png" alt="" loading="lazy" decoding="async"></span><span class="badge-item" title="Full-Stack Developer — University of London on Coursera"><img src="images/badges/full-stack-developer.png" alt="" loading="lazy" decoding="async"></span><span class="badge-item" title="GitHub Advanced Security — GitHub"><img src="images/badges/github-advanced-security.png" alt="" loading="lazy" decoding="async"></span><span class="badge-item" title="Marketing Funnel Essentials — Basis Technologies"><img src="images/badges/marketing-funnel-essentials.png" alt="" loading="lazy" decoding="async"></span><span class="badge-item" title="Google AI Professional Certificate — Coursera"><img src="images/badges/google-ai-professional-certificate.png" alt="" loading="lazy" decoding="async"></span><span class="badge-item" title="Full-Stack Developer — University of London on Coursera"><img src="images/badges/full-stack-developer.png" alt="" loading="lazy" decoding="async"></span><span class="badge-item" title="GitHub Advanced Security — GitHub"><img src="images/badges/github-advanced-security.png" alt="" loading="lazy" decoding="async"></span><span class="badge-item" title="Marketing Funnel Essentials — Basis Technologies"><img src="images/badges/marketing-funnel-essentials.png" alt="" loading="lazy" decoding="async"></span><span class="badge-item" title="Google AI Professional Certificate — Coursera"><img src="images/badges/google-ai-professional-certificate.png" alt="" loading="lazy" decoding="async"></span><span class="badge-item" title="Full-Stack Developer — University of London on Coursera"><img src="images/badges/full-stack-developer.png" alt="" loading="lazy" decoding="async"></span><span class="badge-item" title="GitHub Advanced Security — GitHub"><img src="images/badges/github-advanced-security.png" alt="" loading="lazy" decoding="async"></span><span class="badge-item" title="Marketing Funnel Essentials — Basis Technologies"><img src="images/badges/marketing-funnel-essentials.png" alt="" loading="lazy" decoding="async"></span></div></div>
+        </div>
         </header>
 
+        <!-- SLIDESHOW DISABLED: remove this comment wrapper (and the one around slideshow.js) to re-enable
         <section class="slideshow-container" aria-label="Portfolio preview">
             <div class="section-kicker">
                 <span>Featured Work</span>
@@ -69,43 +84,43 @@
             <div class="slider-wrapper">
                 <div class="slide active">
                     <picture>
-                        <source srcset="optimized/Portfolio-Post_05-mobile.jpg" media="(max-width: 700px)">
-                        <img src="optimized/Portfolio-Post_05-mobile.jpg" alt="Design Project 1" loading="eager" decoding="async" fetchpriority="high">
+                        <source srcset="images/optimized/Portfolio-Post_05-mobile.jpg" media="(max-width: 700px)">
+                        <img src="images/optimized/Portfolio-Post_05-mobile.jpg" alt="Design Project 1" loading="eager" decoding="async" fetchpriority="high">
                     </picture>
                     <div class="slide-caption">About me</div>
                 </div>
                 <div class="slide">
                     <picture>
-                        <source srcset="optimized/Portfolio-Post_01-mobile.jpg" media="(max-width: 700px)">
-                        <img src="optimized/Portfolio-Post_01-mobile.jpg" alt="Design Project 2" loading="lazy" decoding="async">
+                        <source srcset="images/optimized/Portfolio-Post_01-mobile.jpg" media="(max-width: 700px)">
+                        <img src="images/optimized/Portfolio-Post_01-mobile.jpg" alt="Design Project 2" loading="lazy" decoding="async">
                     </picture>
                     <div class="slide-caption">Brand & Companies I worked with</div>
                 </div>
                 <div class="slide">
                     <picture>
-                        <source srcset="optimized/Portfolio-Post_02-mobile.jpg" media="(max-width: 700px)">
-                        <img src="optimized/Portfolio-Post_02-mobile.jpg" alt="Design Project 3" loading="lazy" decoding="async">
+                        <source srcset="images/optimized/Portfolio-Post_02-mobile.jpg" media="(max-width: 700px)">
+                        <img src="images/optimized/Portfolio-Post_02-mobile.jpg" alt="Design Project 3" loading="lazy" decoding="async">
                     </picture>
                     <div class="slide-caption">Social Media Posts</div>
                 </div>
                 <div class="slide">
                     <picture>
-                        <source srcset="optimized/Portfolio-Post_03-mobile.jpg" media="(max-width: 700px)">
-                        <img src="optimized/Portfolio-Post_03-mobile.jpg" alt="Design Project 4" loading="lazy" decoding="async">
+                        <source srcset="images/optimized/Portfolio-Post_03-mobile.jpg" media="(max-width: 700px)">
+                        <img src="images/optimized/Portfolio-Post_03-mobile.jpg" alt="Design Project 4" loading="lazy" decoding="async">
                     </picture>
                     <div class="slide-caption">Social Media Reels</div>
                 </div>
                 <div class="slide">
                     <picture>
-                        <source srcset="optimized/Portfolio-Post_04-mobile.jpg" media="(max-width: 700px)">
-                        <img src="optimized/Portfolio-Post_04-mobile.jpg" alt="Design Project 5" loading="lazy" decoding="async">
+                        <source srcset="images/optimized/Portfolio-Post_04-mobile.jpg" media="(max-width: 700px)">
+                        <img src="images/optimized/Portfolio-Post_04-mobile.jpg" alt="Design Project 5" loading="lazy" decoding="async">
                     </picture>
                     <div class="slide-caption">Tools I use</div>
                 </div>
                 <div class="slide">
                     <picture>
-                        <source srcset="optimized/Portfolio-Post_06-mobile.jpg" media="(max-width: 700px)">
-                        <img src="optimized/Portfolio-Post_06-mobile.jpg" alt="Design Project 6" loading="lazy" decoding="async">
+                        <source srcset="images/optimized/Portfolio-Post_06-mobile.jpg" media="(max-width: 700px)">
+                        <img src="images/optimized/Portfolio-Post_06-mobile.jpg" alt="Design Project 6" loading="lazy" decoding="async">
                     </picture>
                     <div class="slide-caption">Brandings</div>
                 </div>
@@ -128,23 +143,33 @@
                 <button class="dot" type="button" aria-label="Show slide 6"></button>
             </div>
         </section>
+        -->
 
         <nav class="link-grid" aria-label="Quick links">
+            <a href="https://elijahflores.pages.dev/" class="universal-btn" target="_blank" rel="noopener noreferrer">
+                <div class="btn-content">
+                    <i data-icon="web" class="fa-solid fa-code"></i>
+                    <span>Web Development</span>
+                </div>
+                <i data-icon="ext" class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+                <div class="btn-shimmer"></div>
+            </a>
+
             <a href="https://elijahportfolio.xyz" class="universal-btn" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
-                    <i class="fa-solid fa-bolt"></i>
-                    <span>Website Portfolio</span>
+                    <i data-icon="portfolio" class="fa-solid fa-bolt"></i>
+                    <span>Multimedia &amp; Design</span>
                 </div>
-                <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+                <i data-icon="ext" class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
                 <div class="btn-shimmer"></div>
             </a>
 
             <a href="https://www.linkedin.com/in/elijahlordandreiflores/" class="universal-btn" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i class="fa-brands fa-linkedin-in"></i>
-                    <span>LinkedIn</span>
+                    <span>Connect on LinkedIn</span>
                 </div>
-                <i class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+                <i data-icon="ext" class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
                 <div class="btn-shimmer"></div>
             </a>
         </nav>
@@ -152,10 +177,10 @@
         <nav class="link-grid contact-grid" aria-label="Contact links">
             <a href="mailto:elijahflores0204@gmail.com" class="universal-btn" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>elijahflores0204@gmail.com</span>
+                    <i data-icon="mail" class="fa-solid fa-envelope"></i>
+                    <span>Email Me</span>
                 </div>
-                <i class="fa-solid fa-paper-plane btn-arrow"></i>
+                <i data-icon="send" class="fa-solid fa-paper-plane btn-arrow"></i>
                 <div class="btn-shimmer"></div>
             </a>
         </nav>
@@ -183,12 +208,15 @@
         </footer>
     </main>
 
+<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Choose theme" aria-haspopup="dialog"><i data-icon="theme" class="fa-solid fa-palette"></i></button>
+
     <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
-        <i class="fa-solid fa-chevron-up"></i>
+        <i data-icon="top" class="fa-solid fa-chevron-up"></i>
     </button>
 
+    <script src="theme.js"></script>
     <script src="script.js"></script>
     <script src="spider-web.js"></script>
-    <script src="slideshow.js"></script>
+    <!-- <script src="slideshow.js"></script> -->
 </body>
 </html>
