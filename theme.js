@@ -98,12 +98,30 @@
         aurora: () => '<span class="sp-ribbon r1"></span><span class="sp-ribbon r2"></span><span class="sp-ribbon r3"></span>'
     };
 
+    // Pin the splash to what the visitor actually sees (visual viewport), so it stays screen-centred on mobile
+    // even when the page is scrolled, zoomed or the browser toolbar is showing.
+    function fitSplash() {
+        const vv = window.visualViewport;
+        const s = splashEl.style;
+        if (vv) {
+            s.inset = 'auto';
+            s.left = vv.offsetLeft + 'px';
+            s.top = vv.offsetTop + 'px';
+            s.width = vv.width + 'px';
+            s.height = vv.height + 'px';
+        } else {
+            s.inset = '0';
+            s.width = s.height = s.left = s.top = '';
+        }
+    }
+
     function playSplash(id) {
         clearTimeout(splashTimer);
         splashEl.className = 'theme-splash';
         splashEl.innerHTML = '';
         if (reduceMotion || !SPLASH[id]) return;
         splashEl.innerHTML = SPLASH[id]();
+        fitSplash();
         void splashEl.offsetWidth;
         splashEl.className = 'theme-splash show splash-' + id;
         splashTimer = setTimeout(() => { splashEl.className = 'theme-splash'; splashEl.innerHTML = ''; }, 1000);

@@ -1488,36 +1488,36 @@ img { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none;
 .profile-frame, .profile-stage { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
 
 /* ---------- Theme-change splash (full screen, ~0.9s) ---------- */
-.theme-splash { position: fixed; inset: 0; z-index: 120; overflow: hidden; pointer-events: none; display: none; }
+.theme-splash { position: fixed; inset: 0; container-type: size; z-index: 120; overflow: hidden; pointer-events: none; display: none; }
 .theme-splash.show { display: block; animation: splashLife 900ms ease-out both; }
 @keyframes splashLife { 0% { opacity: 0; } 12% { opacity: 1; } 65% { opacity: 1; } 100% { opacity: 0; } }
 
 /* Spider-Man: a web spreads from the centre */
-.sp-web { position: absolute; left: 50%; top: 50%; width: max(150vw, 150vh); height: max(150vw, 150vh); transform: translate(-50%, -50%); }
+.sp-web { position: absolute; left: 50%; top: 50%; width: max(150cqw, 150cqh); height: max(150cqw, 150cqh); transform: translate(-50%, -50%); }
 .sp-web path { fill: none; stroke: rgba(255, 255, 255, 0.92); stroke-width: 0.7; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.8)); animation: webDraw 600ms ease-out forwards; }
 @keyframes webDraw { to { stroke-dashoffset: 0; } }
 .splash-spiderman { background: radial-gradient(circle, rgba(var(--red-rgb), 0.25), transparent 65%); }
 
 /* Batman: bat-signal */
-.sp-beam { position: absolute; inset: 0; background: radial-gradient(circle at 50% 52%, rgba(255, 196, 0, 0.95) 0 16vmin, rgba(255, 196, 0, 0.35) 30vmin, transparent 58vmin); animation: beamIn 900ms ease-out both; }
-.sp-bat { position: absolute; left: 50%; top: 52%; width: 38vmin; transform: translate(-50%, -50%); fill: #050505; animation: signalIn 900ms ease-out both; }
+.sp-beam { position: absolute; inset: 0; background: radial-gradient(circle at 50% 52%, rgba(255, 196, 0, 0.95) 0 16cqmin, rgba(255, 196, 0, 0.35) 30cqmin, transparent 58cqmin); animation: beamIn 900ms ease-out both; }
+.sp-bat { position: absolute; left: 50%; top: 52%; width: 38cqmin; transform: translate(-50%, -50%); fill: #050505; animation: signalIn 900ms ease-out both; }
 @keyframes signalIn { from { transform: translate(-50%, -50%) scale(0.55); } to { transform: translate(-50%, -50%) scale(1.12); } }
 @keyframes beamIn { from { transform: scale(0.6); } to { transform: scale(1.15); } }
 
 /* Iron Man: HUD rings */
 .splash-ironman { background: radial-gradient(circle, rgba(var(--cyan-rgb), 0.2), rgba(0, 0, 0, 0.35) 70%); }
-.sp-hud { position: absolute; left: 50%; top: 50%; width: min(80vmin, 560px); transform: translate(-50%, -50%); filter: drop-shadow(0 0 8px rgba(var(--cyan-rgb), 0.9)); }
+.sp-hud { position: absolute; left: 50%; top: 50%; width: min(80cqmin, 560px); transform: translate(-50%, -50%); filter: drop-shadow(0 0 8px rgba(var(--cyan-rgb), 0.9)); }
 .sp-hud circle { fill: none; stroke: var(--cyan); stroke-width: 1.6; transform-origin: 100px 100px; }
 .sp-hud .r1 { stroke-dasharray: 18 8; animation: hudSpin 900ms linear both; }
 .sp-hud .r2 { stroke: var(--electric); stroke-dasharray: 6 5; animation: hudSpin 900ms linear reverse both; }
 .sp-hud .r3 { stroke-dasharray: 30 10; animation: hudSpin 900ms linear both; }
 .sp-hud .core { fill: #e9fbff; filter: drop-shadow(0 0 6px #fff); }
 @keyframes hudSpin { from { transform: rotate(0) scale(0.6); } to { transform: rotate(200deg) scale(1); } }
-.sp-hud-text { position: absolute; left: 0; right: 0; top: calc(50% + min(42vmin, 290px)); text-align: center; color: var(--cyan); font: 800 0.8rem ui-monospace, Consolas, monospace; letter-spacing: 0.4em; text-shadow: 0 0 10px var(--cyan); }
+.sp-hud-text { position: absolute; left: 0; right: 0; top: calc(50% + min(42cqmin, 290px)); text-align: center; color: var(--cyan); font: 800 0.8rem ui-monospace, Consolas, monospace; letter-spacing: 0.4em; text-shadow: 0 0 10px var(--cyan); }
 
 /* Cartoon: comic POW */
 .splash-cartoon { background: radial-gradient(circle, rgba(255, 225, 77, 0.35) 0 2px, transparent 3px) 0 0 / 22px 22px; }
-.sp-burst { position: absolute; left: 50%; top: 50%; width: min(86vmin, 600px); transform: translate(-50%, -50%) rotate(-6deg); animation: powPop 900ms cubic-bezier(0.2, 1.6, 0.4, 1) both; }
+.sp-burst { position: absolute; left: 50%; top: 50%; width: min(86cqmin, 600px); transform: translate(-50%, -50%) rotate(-6deg); animation: powPop 900ms cubic-bezier(0.2, 1.6, 0.4, 1) both; }
 .sp-burst polygon { fill: var(--electric); stroke: #000; stroke-width: 4; stroke-linejoin: round; }
 .sp-burst text { fill: var(--red); stroke: #000; stroke-width: 3.5; paint-order: stroke; font: 900 46px "Comic Sans MS", "Chalkboard SE", cursive; }
 @keyframes powPop { from { transform: translate(-50%, -50%) rotate(-14deg) scale(0.2); } 40% { transform: translate(-50%, -50%) rotate(-6deg) scale(1.1); } to { transform: translate(-50%, -50%) rotate(-6deg) scale(1); } }
@@ -1530,8 +1530,8 @@ img { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none;
 @keyframes slice { from { transform: translateX(-110%) skewX(-24deg); } to { transform: translateX(110%) skewX(-24deg); } }
 
 /* Vaporwave: sun + grid */
-.sp-sun { position: absolute; left: 50%; bottom: -30vmin; width: 62vmin; height: 62vmin; margin-left: -31vmin; border-radius: 50%; background: linear-gradient(180deg, #ffe66d, var(--red) 55%, var(--electric)); -webkit-mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 20px); mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 20px); animation: sunRise 900ms ease-out both; filter: drop-shadow(0 0 30px rgba(var(--red-rgb), 0.8)); }
-@keyframes sunRise { from { transform: translateY(40vmin); } to { transform: translateY(-62vmin); } }
+.sp-sun { position: absolute; left: 50%; bottom: -30cqmin; width: 62cqmin; height: 62cqmin; margin-left: -31cqmin; border-radius: 50%; background: linear-gradient(180deg, #ffe66d, var(--red) 55%, var(--electric)); -webkit-mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 20px); mask-image: repeating-linear-gradient(180deg, #000 0 14px, transparent 14px 20px); animation: sunRise 900ms ease-out both; filter: drop-shadow(0 0 30px rgba(var(--red-rgb), 0.8)); }
+@keyframes sunRise { from { transform: translateY(40cqmin); } to { transform: translateY(-62cqmin); } }
 .sp-grid { position: absolute; left: -50%; right: -50%; bottom: 0; height: 55%; background: repeating-linear-gradient(90deg, rgba(var(--cyan-rgb), 0.8) 0 2px, transparent 2px 60px), repeating-linear-gradient(0deg, rgba(var(--cyan-rgb), 0.8) 0 2px, transparent 2px 50px); transform: perspective(300px) rotateX(62deg); transform-origin: 50% 100%; animation: gridIn 900ms ease-out both; }
 @keyframes gridIn { from { opacity: 0; } to { opacity: 0.8; } }
 
@@ -1652,3 +1652,8 @@ html[data-theme="aurora"] .music-visualizer span { align-self: center; border-ra
     #volume-slider { width: 104px; height: 32px; margin: 0; touch-action: none; }
     .volume-details { gap: 8px; }
 }
+
+/* Text-only footer link */
+.footer-credit { margin-top: 10px; font-size: 0.7rem; letter-spacing: 0.04em; }
+.footer-credit a { color: inherit; text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.25); text-underline-offset: 3px; opacity: 0.8; transition: opacity 200ms ease; }
+.footer-credit a:hover, .footer-credit a:focus-visible { opacity: 1; }
