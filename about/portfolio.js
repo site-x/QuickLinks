@@ -369,19 +369,73 @@ const CONFIG = {
     }
   }
 
-  /* ---------- Click-to-play video clips (loads YouTube only when tapped) ---------- */
-  function initClips() {
-    $$('[data-yt]').forEach((btn) => btn.addEventListener('click', () => {
-      const f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.yt + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
-      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-      f.allowFullscreen = true;
-      f.title = btn.getAttribute('aria-label').replace('Play video: ', '');
-      btn.replaceChildren(f);
-    }, { once: true }));
+  /* ---------- Work preview modal (images, videos and web projects open in a dialog) ---------- */
+  function initPreview() {
+    const media = $$('.panel__media');
+    if (!media.length || typeof HTMLDialogElement === 'undefined') return;
+    const dlg = document.createElement('dialog');
+    dlg.className = 'preview';
+    dlg.setAttribute('aria-label', 'Preview');
+    dlg.innerHTML = '<button class="preview__close" type="button" aria-label="Close preview">&times;</button><div class="preview__body"></div>';
+    document.body.appendChild(dlg);
+    const body = $('.preview__body', dlg);
+    let opener = null;
+    const close = () => dlg.close();
+    $('.preview__close', dlg).addEventListener('click', close);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg) close(); });
+    dlg.addEventListener('close', () => { body.replaceChildren(); document.documentElement.classList.remove('preview-open'); if (opener) opener.focus(); });
+
+    const open = (node, trigger, label) => {
+      opener = trigger;
+      body.replaceChildren(node);
+      dlg.setAttribute('aria-label', label || 'Preview');
+      document.documentElement.classList.add('preview-open');
+      dlg.showModal();
+    };
+
+    media.forEach((group) => {
+      $$(':scope > img', group).forEach((img) => {
+        img.tabIndex = 0;
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-label', 'Open image preview');
+        const show = () => {
+          const big = document.createElement('img');
+          big.src = img.currentSrc || img.src;
+          big.alt = '';
+          open(big, img, 'Image preview');
+        };
+        img.addEventListener('click', show);
+        img.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); show(); } });
+      });
+      $$('[data-yt]', group).forEach((btn) => btn.addEventListener('click', () => {
+        const f = document.createElement('iframe');
+        f.className = 'preview__video';
+        f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.yt + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        f.allowFullscreen = true;
+        f.title = btn.getAttribute('aria-label').replace('Play video: ', '');
+        open(f, btn, f.title);
+      }));
+      $$('a.site', group).forEach((a) => a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const wrap = document.createElement('div');
+        wrap.className = 'preview__site';
+        const big = document.createElement('img');
+        big.src = $('img', a).src;
+        big.alt = '';
+        const link = document.createElement('a');
+        link.className = 'btn btn--red';
+        link.href = a.href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.innerHTML = 'VIEW PROJECT <span aria-hidden="true">→</span>';
+        wrap.append(big, link);
+        open(wrap, a, $('span', a).firstChild.textContent.trim());
+      }));
+    });
   }
 
-  [initPointerFocus, initReloadToTop, initContact, initNav, initActiveLinks, initReveals, initMarquee, initCarousel, initBadges, initClickSound, initChrome, initClips].forEach((init) => {
+  [initPointerFocus, initReloadToTop, initContact, initNav, initActiveLinks, initReveals, initMarquee, initCarousel, initBadges, initClickSound, initChrome, initPreview].forEach((init) => {
     try { init(); } catch (err) { console.error(err); }
   });
 })();
