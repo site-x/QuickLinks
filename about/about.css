@@ -24,3 +24,10 @@ img { -webkit-user-drag: none; -webkit-touch-callout: none; }
 @media (max-width: 559.98px) { #what .specs { grid-template-columns: 1fr; } }
 /* longer wordmark than ELIJAH / DEV, so scale it down to fit */
 .footer__wordmark { font-size: 10.1vw; }
+
+/* How I work: one wide card with four steps in a row (no decorative boxes). */
+.process__inner { grid-template-columns: minmax(0, 1fr); }
+.process__card { width: 100%; }
+@media (min-width: 900px) {
+  .process__card .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+}
