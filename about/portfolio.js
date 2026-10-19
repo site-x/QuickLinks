@@ -369,7 +369,19 @@ const CONFIG = {
     }
   }
 
-  [initPointerFocus, initReloadToTop, initContact, initNav, initActiveLinks, initReveals, initMarquee, initCarousel, initBadges, initClickSound, initChrome].forEach((init) => {
+  /* ---------- Click-to-play video clips (loads YouTube only when tapped) ---------- */
+  function initClips() {
+    $$('[data-yt]').forEach((btn) => btn.addEventListener('click', () => {
+      const f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.yt + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      f.title = btn.getAttribute('aria-label').replace('Play video: ', '');
+      btn.replaceChildren(f);
+    }, { once: true }));
+  }
+
+  [initPointerFocus, initReloadToTop, initContact, initNav, initActiveLinks, initReveals, initMarquee, initCarousel, initBadges, initClickSound, initChrome, initClips].forEach((init) => {
     try { init(); } catch (err) { console.error(err); }
   });
 })();
