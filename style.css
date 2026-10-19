@@ -1683,3 +1683,32 @@ html[data-theme="cyberpunk"] .profile-stage::before {
         0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 28px 100%, 0 calc(100% - 28px),
         1px 1px, calc(100% - 27.6px) 1px, calc(100% - 1px) 27.6px, calc(100% - 1px) calc(100% - 1px), 27.6px calc(100% - 1px), 1px calc(100% - 27.6px));
 }
+
+/* ---------- Default theme: White ---------- */
+html[data-theme="default"] {
+    color-scheme: light;
+    --void: #f4f7fb; --void-2: #ffffff; --ink: #0f172a;
+    --panel: rgba(255, 255, 255, 0.82); --panel-strong: rgba(255, 255, 255, 0.96);
+    --chrome: #0f172a; --muted: rgba(15, 23, 42, 0.64); --faint: rgba(15, 23, 42, 0.14);
+    --red: #2563eb; --red-rgb: 37, 99, 235; --accent2: #4f46e5;
+    --electric: #3b82f6; --electric-rgb: 59, 130, 246; --cyan: #0ea5e9; --cyan-rgb: 14, 165, 233;
+    --bg-a: #ffffff; --bg-b: #f3f6fb; --bg-c: #e6edf8;
+    --shadow-red: 0 10px 28px rgba(var(--red-rgb), 0.18);
+}
+html[data-theme="default"] body::before { opacity: 0; }
+html[data-theme="default"] .signal-pill { color: var(--chrome); }
+html[data-theme="default"] .theme-toggle { color: #fff; background: radial-gradient(circle at 30% 25%, #3b82f6, #1e40af); box-shadow: 0 10px 26px rgba(37, 99, 235, 0.35); }
+html[data-theme="default"] .theme-backdrop { background: rgba(15, 23, 42, 0.45); }
+html[data-theme="default"] .theme-dialog { box-shadow: 0 30px 90px rgba(15, 23, 42, 0.25); }
+html[data-theme="default"] .theme-close, html[data-theme="default"] .theme-option { background: rgba(15, 23, 42, 0.05); border-color: rgba(15, 23, 42, 0.12); }
+html[data-theme="default"] .profile { background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.78)); border-color: rgba(15, 23, 42, 0.1); box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12), inset 0 0 0 1px rgba(var(--red-rgb), 0.08); }
+html[data-theme="default"] .universal-btn, html[data-theme="default"] .social-chip {
+    background: linear-gradient(135deg, rgba(var(--red-rgb), 0.07), transparent 40%), #ffffff;
+    border-color: rgba(15, 23, 42, 0.12); box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+html[data-theme="default"] .universal-btn::before { background: linear-gradient(90deg, transparent, rgba(var(--red-rgb), 0.1), transparent); }
+html[data-theme="default"] .volume-control { background: linear-gradient(135deg, rgba(var(--red-rgb), 0.08), rgba(var(--electric-rgb), 0.04)), #fff; border-color: rgba(15, 23, 42, 0.12); box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08); }
+html[data-theme="default"] footer { color: rgba(15, 23, 42, 0.55); }
+html[data-theme="default"] .footer-credit a { text-decoration-color: rgba(15, 23, 42, 0.3); }
+html[data-theme="default"] .theme-step { color: #fff; background: radial-gradient(circle at 30% 25%, #3b82f6, #1e40af); box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35); }
+html[data-theme="default"] .back-to-top { background: #fff; color: var(--chrome); }
