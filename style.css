@@ -1657,3 +1657,10 @@ html[data-theme="aurora"] .music-visualizer span { align-self: center; border-ra
 .footer-credit { margin-top: 10px; font-size: 0.7rem; letter-spacing: 0.04em; }
 .footer-credit a { color: inherit; text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.25); text-underline-offset: 3px; opacity: 0.8; transition: opacity 200ms ease; }
 .footer-credit a:hover, .footer-credit a:focus-visible { opacity: 1; }
+
+/* Footer: centered at the bottom on desktop; smaller copyright link */
+@media (min-width: 960px) {
+    .container > footer { grid-column: 1 / -1; grid-row: 5; align-self: end; justify-self: center; margin-top: 36px; padding-bottom: 6px; text-align: center; }
+}
+.footer-credit { font-size: 0.56rem; letter-spacing: 0.06em; margin-top: 8px; }
+.footer-credit a { opacity: 0.6; }
