@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="https://www.elijahflores.xyz/web-development/">
+  <meta property="og:url" content="https://www.elijahflores.xyz/web-development/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elijah Flores — Web Developer | ELIJAH / DEV</title>
+  <meta name="description" content="Web developer building modern websites and web apps. I use AI to move faster, then review, test and own every line that ships — from idea to deployment.">
+  <meta name="author" content="Elijah Flores">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+
+  <!-- Open Graph. og:url / canonical are intentionally omitted until the production domain is final (see README). -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ELIJAH / DEV">
+  <meta property="og:title" content="Elijah Flores — Web Developer">
+  <meta property="og:description" content="Modern websites and web applications — AI-assisted, developer-reviewed, and shipped from first idea to deployment.">
+  <meta property="og:image" content="https://www.elijahflores.xyz/web-development/assets/images/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Elijah Flores — Web Developer">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Flags that JavaScript is running, so enhancements (reveals, collapsed mobile menu) only apply when it is. -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== STATUS STRIP ============================== -->
+  <div class="container">
+    <p class="topbar">
+      <span aria-hidden="true">MADE FOR THE WEB</span>
+      <span>ELIJAH FLORES · WEB DEVELOPER · BUILDING ON THE WEB</span>
+      <span aria-hidden="true">MADE FOR THE WEB</span>
+    </p>
+  </div>
+
+  <!-- ============================== NAVIGATION ============================== -->
+  <header class="nav" data-nav>
+    <div class="container nav__inner">
+      <div class="nav__left">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+          <span class="nav__toggle-icon" aria-hidden="true"></span>
+          <span data-nav-toggle-label>Menu</span>
+        </button>
+        <nav class="nav__menu" id="nav-menu" aria-label="Primary" data-nav-menu>
+          <a class="nav__link nav__link--home" href="#top">Home</a>
+          <a class="nav__link" href="credentials.html">Credentials</a>
+          <a class="nav__link" href="projects.html">Projects</a>
+          <a class="nav__link" href="#stack">Stack</a>
+          <a class="nav__link" href="about.html">About</a>
+        </nav>
+      </div>
+
+      <a class="brand" href="#top" aria-label="ELIJAH / DEV — back to top">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>ELIJAH <span class="brand__slash">/</span> DEV</span>
+      </a>
+
+      <a class="btn btn--red nav__cta" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>
+        CONTACT<span class="nav__cta-extra">&nbsp;ME</span><span class="visually-hidden"> on WhatsApp (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="checker" aria-hidden="true"></div>
+
+  <main id="main">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero container" aria-labelledby="hero-title" data-hero>
+      <div class="hero__panel">
+        <!-- Faint project photos behind the title. Swap or remove any <img>; strength is --photo-opacity in styles.css. -->
+        <div class="hero__photos" aria-hidden="true">
+          <img class="hero__photo hero__photo--a" src="assets/images/project-menuhaus.webp" alt="" width="1400" height="933" decoding="async" fetchpriority="low">
+          <img class="hero__photo hero__photo--b" src="assets/images/project-damichele.webp" alt="" width="1400" height="933" decoding="async" fetchpriority="low">
+          <img class="hero__photo hero__photo--c" src="assets/images/project-elijahportfolio.webp" alt="" width="1400" height="933" decoding="async" fetchpriority="low">
+          <img class="hero__photo hero__photo--d" src="assets/images/project-foodelic.webp" alt="" width="1400" height="933" decoding="async" fetchpriority="low">
+          <img class="hero__photo hero__photo--me" src="assets/images/elijah-flores.webp" alt="" width="1012" height="1012" decoding="async" fetchpriority="low">
+        </div>
+        <h1 class="hero__title" id="hero-title">
+          <span><span class="hero__w">ELIJAH</span> <span class="hero__w">FLORES</span></span>
+          <span class="hero__sub outline"><span class="hero__w">WEB</span> <span class="hero__w">DEVELOPER</span></span>
+        </h1>
+        <a class="hero__badges" href="credentials.html" aria-label="Featured credentials — see all credentials">
+          <ul role="list"><li><img src="assets/images/badges/AI-Professional.png" alt="Google AI Professional Certificate" title="Google AI Professional Certificate" width="340" height="340" loading="lazy" decoding="async"></li><li><img src="assets/images/badges/ai-app-building.png" alt="Google AI for App Building" title="Google AI for App Building" width="340" height="340" loading="lazy" decoding="async"></li><li><img src="assets/images/badges/ms-github-advanced-security.svg" alt="GitHub Advanced Security" title="GitHub Advanced Security" width="340" height="340" loading="lazy" decoding="async"></li><li><img src="assets/images/badges/ai-data-analysis.png" alt="Google AI for Data Analysis" title="Google AI for Data Analysis" width="340" height="340" loading="lazy" decoding="async"></li><li><img src="assets/images/badges/ai-app-deployment.png" alt="Google AI for App Deployment" title="Google AI for App Deployment" width="340" height="340" loading="lazy" decoding="async"></li></ul>
+        </a>
+        <div class="hero__actions">
+          <a class="btn btn--light btn--xl" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>
+            CONTACT ME<span class="visually-hidden"> on WhatsApp (opens in a new tab)</span>
+          </a>
+          <a class="btn btn--dark btn--xl" href="projects.html">SEE MY WORK</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="checker" aria-hidden="true"></div>
+
+    <!-- SYNC:credentials:start (source of truth; sync-credentials.ps1 copies this block into about.html) -->
+    <!-- ============================== CREDENTIALS ==============================
+         Generated from one list; credentials.html shows the same badges — keep both in step.
+         Clicking a badge opens its details (from its <template>) with a button to verify on Credly. -->
+    <section class="creds" id="credentials" aria-labelledby="creds-title">
+      <div class="container">
+        <header class="work__head">
+          <h2 class="display display--red" id="creds-title">CREDENTIALS</h2>
+          <a class="btn btn--red work__all" href="credentials.html">VIEW ALL <span aria-hidden="true">→</span></a>
+        </header>
+        <h3 class="creds-group__title" id="creds-certs">CERTIFICATES</h3>
+        <div class="carousel carousel--badges" data-carousel>
+          <ul class="badges" role="list" data-carousel-track tabindex="0" aria-label="Certificates — scroll sideways for more">
+            <li class="badge-slide">
+              <button class="badge badge--stack badge--cert" type="button" data-badge aria-haspopup="dialog">
+                <span class="badge__count">3 COURSES</span>
+                <img src="assets/images/certificates/university_of_london_Full-stack-development-certificate.png" alt="" width="1224" height="947" loading="lazy" decoding="async">
+                <span class="badge__name">Full-Stack Web Development</span>
+                <span class="badge__meta"><img class="issuer" src="assets/images/logos/uol.png" alt="" width="68" height="84" decoding="async">University of London · 2026</span>
+                <span class="badge__hint" aria-hidden="true">VIEW 3 COURSES +</span>
+              </button>
+              <template>
+                <img class="badge-dialog__img badge-dialog__img--cert" src="assets/images/certificates/university_of_london_Full-stack-development-certificate.png" alt="Full-Stack Web Development — issued to Elijah Lord Andrei Flores" width="1224" height="947">
+                <p class="badge__meta"><img class="issuer" src="assets/images/logos/uol.png" alt="" width="68" height="84" decoding="async">University of London · Oct 17, 2026</p>
+                <h3 class="badge-dialog__title" id="badge-dialog-title">Full-Stack Web Development</h3>
+                <p class="badge-dialog__text">A 3-course specialization covering semantic HTML, accessible and responsive CSS, and data-driven JavaScript.</p>
+                <p class="badge-dialog__sublabel">COURSE CERTIFICATES · 3</p>
+                <ul class="subs" role="list" tabindex="0" aria-label="COURSE CERTIFICATES · 3 — tap one to view it">
+                  <li>
+                    <button class="sub sub--cert" type="button" data-sub>
+                      <img src="assets/images/certificates/course-certs/CERT2.jpg" alt="" width="1772" height="928" loading="lazy" decoding="async">
+                      <span>HTML: How to Build a Website</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img badge-dialog__img--cert" src="assets/images/certificates/course-certs/CERT2.jpg" alt="HTML: How to Build a Website — issued to Elijah Lord Andrei Flores" width="1772" height="928">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/uol.png" alt="" width="68" height="84" decoding="async">University of London · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">HTML: How to Build a Website</h3>
+                      <a class="btn btn--red" href="https://coursera.org/verify/WGSRL0EGTYQ2" target="_blank" rel="noopener noreferrer">VERIFY CERTIFICATE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub sub--cert" type="button" data-sub>
+                      <img src="assets/images/certificates/course-certs/CERT3.jpg" alt="" width="1772" height="928" loading="lazy" decoding="async">
+                      <span>CSS: Web Page Layout — Usability and Accessibility</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img badge-dialog__img--cert" src="assets/images/certificates/course-certs/CERT3.jpg" alt="CSS: Web Page Layout — Usability and Accessibility — issued to Elijah Lord Andrei Flores" width="1772" height="928">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/uol.png" alt="" width="68" height="84" decoding="async">University of London · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">CSS: Web Page Layout — Usability and Accessibility</h3>
+                      <a class="btn btn--red" href="https://coursera.org/verify/KZIPTU2NHNT7" target="_blank" rel="noopener noreferrer">VERIFY CERTIFICATE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub sub--cert" type="button" data-sub>
+                      <img src="assets/images/certificates/course-certs/CERT1.jpg" alt="" width="1772" height="928" loading="lazy" decoding="async">
+                      <span>Data-driven Websites: JSON, APIs and Templates</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img badge-dialog__img--cert" src="assets/images/certificates/course-certs/CERT1.jpg" alt="Data-driven Websites: JSON, APIs and Templates — issued to Elijah Lord Andrei Flores" width="1772" height="928">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/uol.png" alt="" width="68" height="84" decoding="async">University of London · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Data-driven Websites: JSON, APIs and Templates</h3>
+                      <a class="btn btn--red" href="https://coursera.org/verify/RYILVB77DHAX" target="_blank" rel="noopener noreferrer">VERIFY CERTIFICATE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                </ul>
+                <a class="btn btn--red" href="https://coursera.org/verify/specialization/RCUOPV1JAW7L" target="_blank" rel="noopener noreferrer">VERIFY CERTIFICATE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+              </template>
+            </li>
+            <li class="badge-slide">
+            <button class="badge badge--stack badge--cert" type="button" data-badge aria-haspopup="dialog">
+            <span class="badge__count">6 COURSES</span>
+            <img src="assets/images/certificates/google-ai/5GXWYUSDD1GP.jpg" alt="" width="1649" height="1275" loading="lazy" decoding="async">
+            <span class="badge__name">Google AI Professional Certificate</span>
+            <span class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Coursera · 2026</span>
+            <span class="badge__hint" aria-hidden="true">VIEW 6 COURSES +</span>
+            </button>
+            <template>
+            <img class="badge-dialog__img badge-dialog__img--cert" src="assets/images/certificates/google-ai/5GXWYUSDD1GP.jpg" alt="Google AI Professional Certificate — issued to Elijah Lord Andrei Flores" width="1649" height="1275">
+            <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Coursera · Oct 18, 2026</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI Professional Certificate</h3>
+            <p class="badge-dialog__text">Google’s 8-course professional certificate in applied AI, with the six course certificates I’ve earned so far.</p>
+            <p class="badge-dialog__sublabel">COURSE CERTIFICATES · 6</p>
+            <ul class="subs" role="list" tabindex="0" aria-label="COURSE CERTIFICATES · 6 — tap one to view it">
+            <li>
+            <button class="sub sub--cert" type="button" data-sub>
+            <img src="assets/images/certificates/google-ai/T8S3H3BXVUZY.jpg" alt="" width="1649" height="1275" loading="lazy" decoding="async">
+            <span>Google AI Fundamentals</span>
+            </button>
+            <template>
+            <img class="badge-dialog__img badge-dialog__img--cert" src="assets/images/certificates/google-ai/T8S3H3BXVUZY.jpg" alt="Google AI Fundamentals — issued to Elijah Lord Andrei Flores" width="1649" height="1275">
+            <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI Fundamentals</h3>
+            <a class="btn btn--red" href="https://www.coursera.org/account/accomplishments/verify/T8S3H3BXVUZY" target="_blank" rel="noopener noreferrer">VERIFY CERTIFICATE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+            </li>
+            <li>
+            <button class="sub sub--cert" type="button" data-sub>
+            <img src="assets/images/certificates/google-ai/GBU20LWU4FU4.jpg" alt="" width="1649" height="1275" loading="lazy" decoding="async">
+            <span>Google AI for App Building</span>
+            </button>
+            <template>
+            <img class="badge-dialog__img badge-dialog__img--cert" src="assets/images/certificates/google-ai/GBU20LWU4FU4.jpg" alt="Google AI for App Building — issued to Elijah Lord Andrei Flores" width="1649" height="1275">
+            <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for App Building</h3>
+            <a class="btn btn--red" href="https://www.coursera.org/account/accomplishments/verify/GBU20LWU4FU4" target="_blank" rel="noopener noreferrer">VERIFY CERTIFICATE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+            </li>
+            <li>
+            <button class="sub sub--cert" type="button" data-sub>
+            <img src="assets/images/certificates/google-ai/JR09MEZSWLAP.jpg" alt="" width="1649" height="1275" loading="lazy" decoding="async">
+            <span>Google AI for App Deployment</span>
+            </button>
+            <template>
+            <img class="badge-dialog__img badge-dialog__img--cert" src="assets/images/certificates/google-ai/JR09MEZSWLAP.jpg" alt="Google AI for App Deployment — issued to Elijah Lord Andrei Flores" width="1649" height="1275">
+            <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for App Deployment</h3>
+            <a class="btn btn--red" href="https://www.coursera.org/account/accomplishments/verify/JR09MEZSWLAP" target="_blank" rel="noopener noreferrer">VERIFY CERTIFICATE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+            </li>
+            <li>
+            <button class="sub sub--cert" type="button" data-sub>
+            <img src="assets/images/certificates/google-ai/FED0MPDRGB9A.jpg" alt="" width="1649" height="1275" loading="lazy" decoding="async">
+            <span>Google AI for Data Analysis</span>
+            </button>
+            <template>
+            <img class="badge-dialog__img badge-dialog__img--cert" src="assets/images/certificates/google-ai/FED0MPDRGB9A.jpg" alt="Google AI for Data Analysis — issued to Elijah Lord Andrei Flores" width="1649" height="1275">
+            <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for Data Analysis</h3>
+            <a class="btn btn--red" href="https://www.coursera.org/account/accomplishments/verify/FED0MPDRGB9A" target="_blank" rel="noopener noreferrer">VERIFY CERTIFICATE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+            </li>
+            <li>
+            <button class="sub sub--cert" type="button" data-sub>
+            <img src="assets/images/certificates/google-ai/NWV3WZPK7PJ1.jpg" alt="" width="1649" height="1275" loading="lazy" decoding="async">
+            <span>Google AI for Research and Insights</span>
+            </button>
+            <template>
+            <img class="badge-dialog__img badge-dialog__img--cert" src="assets/images/certificates/google-ai/NWV3WZPK7PJ1.jpg" alt="Google AI for Research and Insights — issued to Elijah Lord Andrei Flores" width="1649" height="1275">
+            <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for Research and Insights</h3>
+            <a class="btn btn--red" href="https://www.coursera.org/account/accomplishments/verify/NWV3WZPK7PJ1" target="_blank" rel="noopener noreferrer">VERIFY CERTIFICATE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+            </li>
+            <li>
+            <button class="sub sub--cert" type="button" data-sub>
+            <img src="assets/images/certificates/google-ai/2RHQG308KR0Z.jpg" alt="" width="1649" height="1275" loading="lazy" decoding="async">
+            <span>Google AI for Brainstorming and Planning</span>
+            </button>
+            <template>
+            <img class="badge-dialog__img badge-dialog__img--cert" src="assets/images/certificates/google-ai/2RHQG308KR0Z.jpg" alt="Google AI for Brainstorming and Planning — issued to Elijah Lord Andrei Flores" width="1649" height="1275">
+            <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for Brainstorming and Planning</h3>
+            <a class="btn btn--red" href="https://www.coursera.org/account/accomplishments/verify/2RHQG308KR0Z" target="_blank" rel="noopener noreferrer">VERIFY CERTIFICATE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+            </li>
+            </ul>
+            <a class="btn btn--red" href="https://www.coursera.org/account/accomplishments/specialization/5GXWYUSDD1GP" target="_blank" rel="noopener noreferrer">VERIFY CERTIFICATE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+            </li>
+
+          </ul>
+          <div class="carousel__nav">
+            <button class="carousel__btn" type="button" data-carousel-next aria-label="Next certificates"><span aria-hidden="true">→</span></button>
+            <button class="carousel__btn" type="button" data-carousel-prev aria-label="Previous certificates"><span aria-hidden="true">←</span></button>
+          </div>
+        </div>
+
+        <h3 class="creds-group__title" id="creds-badges">BADGES</h3>
+        <div class="carousel carousel--badges" data-carousel>
+          <ul class="badges" role="list" data-carousel-track tabindex="0" aria-label="Badges — scroll sideways for more">
+            <li class="badge-slide">
+              <button class="badge badge--stack" type="button" data-badge aria-haspopup="dialog">
+                <span class="badge__count">8 BADGES</span>
+                <img src="assets/images/badges/AI-Professional.png" alt="" width="1080" height="1080" loading="lazy" decoding="async">
+                <span class="badge__name">Google AI Professional Certificate</span>
+                <span class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · 2026</span>
+                <span class="badge__hint" aria-hidden="true">VIEW 8 BADGES +</span>
+              </button>
+              <template>
+                <img class="badge-dialog__img" src="assets/images/badges/AI-Professional.png" alt="Google AI Professional Certificate — issued to Elijah Lord Andrei Flores" width="1080" height="1080">
+                <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · 2026</p>
+                <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI Professional Certificate</h3>
+                <p class="badge-dialog__text">Google’s professional certificate in applied AI — eight courses, from AI fundamentals and prompting to building and deploying apps with AI.</p>
+                <p class="badge-dialog__sublabel">COURSE BADGES · 8</p>
+                <ul class="subs" role="list" tabindex="0" aria-label="COURSE BADGES · 8 — tap one to view it">
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ai-fundamentals.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Google AI Fundamentals</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ai-fundamentals.png" alt="Google AI Fundamentals — issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI Fundamentals</h3>
+                      <a class="btn btn--red" href="https://www.credly.com/badges/66c11d67-eb24-44d7-8fc3-26112de118c4" target="_blank" rel="noopener noreferrer">VERIFY BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ai-app-building.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Google AI for App Building</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ai-app-building.png" alt="Google AI for App Building — issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for App Building</h3>
+                      <a class="btn btn--red" href="https://www.credly.com/badges/2f45675d-5177-4348-8d67-ff95c6b786c3" target="_blank" rel="noopener noreferrer">VERIFY BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ai-app-deployment.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Google AI for App Deployment</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ai-app-deployment.png" alt="Google AI for App Deployment — issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for App Deployment</h3>
+                      <a class="btn btn--red" href="https://www.credly.com/badges/57a1bcef-4ec3-463d-b9dc-e09ae64a2ae8" target="_blank" rel="noopener noreferrer">VERIFY BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ai-data-analysis.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Google AI for Data Analysis</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ai-data-analysis.png" alt="Google AI for Data Analysis — issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for Data Analysis</h3>
+                      <a class="btn btn--red" href="https://www.credly.com/badges/6fb7c90e-195a-4346-9f8e-dc8c74f2cde7" target="_blank" rel="noopener noreferrer">VERIFY BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ai-research.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Google AI for Research and Insights</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ai-research.png" alt="Google AI for Research and Insights — issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for Research and Insights</h3>
+                      <a class="btn btn--red" href="https://www.credly.com/badges/3abfc40b-c75e-4451-af78-1ecd296a78ba" target="_blank" rel="noopener noreferrer">VERIFY BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ai-brainstorming.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Google AI for Brainstorming and Planning</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ai-brainstorming.png" alt="Google AI for Brainstorming and Planning — issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for Brainstorming and Planning</h3>
+                      <a class="btn btn--red" href="https://www.credly.com/badges/480d3b98-f26a-4e84-a552-7e2d141d3f79" target="_blank" rel="noopener noreferrer">VERIFY BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ai-writing.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Google AI for Writing and Communicating</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ai-writing.png" alt="Google AI for Writing and Communicating — issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for Writing and Communicating</h3>
+                      <a class="btn btn--red" href="https://www.credly.com/badges/09ec9091-9d3d-4617-8a58-a1f1abef400e" target="_blank" rel="noopener noreferrer">VERIFY BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ai-content-creation.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Google AI for Content Creation</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ai-content-creation.png" alt="Google AI for Content Creation — issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/google.svg" alt="" width="24" height="24" decoding="async">Google · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Google AI for Content Creation</h3>
+                      <a class="btn btn--red" href="https://www.credly.com/badges/38889229-ed14-4104-bc34-2ca1c7b6dde8" target="_blank" rel="noopener noreferrer">VERIFY BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                </ul>
+                <a class="btn btn--red" href="https://www.credly.com/users/elijah-lord-andrei-flores" target="_blank" rel="noopener noreferrer">ALL MY BADGES<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+              </template>
+            </li>
+            <li class="badge-slide">
+              <button class="badge badge--stack" type="button" data-badge aria-haspopup="dialog">
+                <span class="badge__count">10 BADGES</span>
+                <img src="assets/images/badges/ms-github-advanced-security.svg" alt="" width="340" height="340" loading="lazy" decoding="async">
+                <span class="badge__name">GitHub Advanced Security</span>
+                <span class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · 2026</span>
+                <span class="badge__hint" aria-hidden="true">VIEW 10 BADGES +</span>
+              </button>
+              <template>
+                <img class="badge-dialog__img" src="assets/images/badges/ms-github-advanced-security.svg" alt="GitHub Advanced Security — Microsoft Learn trophy" width="340" height="340">
+                <p class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · Oct 17, 2026</p>
+                <h3 class="badge-dialog__title" id="badge-dialog-title">GitHub Advanced Security</h3>
+                <p class="badge-dialog__text">Two Microsoft Learn learning paths and eight modules on securing code with GitHub Advanced Security: CodeQL code scanning, secret scanning, Dependabot and security policies.</p>
+                <p class="badge-dialog__sublabel">TROPHIES &amp; BADGES · 10</p>
+                <ul class="subs" role="list" tabindex="0" aria-label="TROPHIES &amp; BADGES · 10 — tap one to view it">
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ms-trophy.svg" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>GitHub Advanced Security Part 1 of 2</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ms-trophy.svg" alt="GitHub Advanced Security Part 1 of 2 — learning path trophy issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">GitHub Advanced Security Part 1 of 2</h3>
+                      <a class="btn btn--red" href="https://learn.microsoft.com/en-us/users/elijahlordandreiflores-9975/" target="_blank" rel="noopener noreferrer">VIEW BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ms-trophy.svg" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>GitHub Advanced Security Part 2 of 2</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ms-trophy.svg" alt="GitHub Advanced Security Part 2 of 2 — learning path trophy issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">GitHub Advanced Security Part 2 of 2</h3>
+                      <a class="btn btn--red" href="https://learn.microsoft.com/en-us/users/elijahlordandreiflores-9975/" target="_blank" rel="noopener noreferrer">VIEW BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ms-sensitive-data.svg" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Manage sensitive data and security policies within GitHub</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ms-sensitive-data.svg" alt="Manage sensitive data and security policies within GitHub — module badge issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Manage sensitive data and security policies within GitHub</h3>
+                      <a class="btn btn--red" href="https://learn.microsoft.com/en-us/users/elijahlordandreiflores-9975/" target="_blank" rel="noopener noreferrer">VIEW BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ms-module.svg" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>GitHub administration for GitHub Advanced Security</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ms-module.svg" alt="GitHub administration for GitHub Advanced Security — module badge issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">GitHub administration for GitHub Advanced Security</h3>
+                      <a class="btn btn--red" href="https://learn.microsoft.com/en-us/users/elijahlordandreiflores-9975/" target="_blank" rel="noopener noreferrer">VIEW BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ms-module.svg" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Code scanning with GitHub CodeQL</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ms-module.svg" alt="Code scanning with GitHub CodeQL — module badge issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Code scanning with GitHub CodeQL</h3>
+                      <a class="btn btn--red" href="https://learn.microsoft.com/en-us/users/elijahlordandreiflores-9975/" target="_blank" rel="noopener noreferrer">VIEW BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ms-module.svg" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Identify security vulnerabilities in your codebase by using CodeQL</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ms-module.svg" alt="Identify security vulnerabilities in your codebase by using CodeQL — module badge issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Identify security vulnerabilities in your codebase by using CodeQL</h3>
+                      <a class="btn btn--red" href="https://learn.microsoft.com/en-us/users/elijahlordandreiflores-9975/" target="_blank" rel="noopener noreferrer">VIEW BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ms-module.svg" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Configure code scanning on GitHub</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ms-module.svg" alt="Configure code scanning on GitHub — module badge issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Configure code scanning on GitHub</h3>
+                      <a class="btn btn--red" href="https://learn.microsoft.com/en-us/users/elijahlordandreiflores-9975/" target="_blank" rel="noopener noreferrer">VIEW BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ms-module.svg" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Configure and use secret scanning in your GitHub repository</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ms-module.svg" alt="Configure and use secret scanning in your GitHub repository — module badge issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Configure and use secret scanning in your GitHub repository</h3>
+                      <a class="btn btn--red" href="https://learn.microsoft.com/en-us/users/elijahlordandreiflores-9975/" target="_blank" rel="noopener noreferrer">VIEW BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ms-module.svg" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Configure Dependabot security updates on your GitHub repo</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ms-module.svg" alt="Configure Dependabot security updates on your GitHub repo — module badge issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Configure Dependabot security updates on your GitHub repo</h3>
+                      <a class="btn btn--red" href="https://learn.microsoft.com/en-us/users/elijahlordandreiflores-9975/" target="_blank" rel="noopener noreferrer">VIEW BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/ms-module.svg" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Introduction to GitHub Advanced Security</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/ms-module.svg" alt="Introduction to GitHub Advanced Security — module badge issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/microsoft.svg" alt="" width="23" height="23" decoding="async">Microsoft Learn · Oct 17, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Introduction to GitHub Advanced Security</h3>
+                      <a class="btn btn--red" href="https://learn.microsoft.com/en-us/users/elijahlordandreiflores-9975/" target="_blank" rel="noopener noreferrer">VIEW BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                </ul>
+                <a class="btn btn--red" href="https://learn.microsoft.com/en-us/users/elijahlordandreiflores-9975/" target="_blank" rel="noopener noreferrer">MY LEARN PROFILE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+              </template>
+            </li>
+            <li class="badge-slide">
+              <button class="badge badge--stack" type="button" data-badge aria-haspopup="dialog">
+                <span class="badge__count">3 BADGES</span>
+                <img src="assets/images/badges/cybersecurity.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                <span class="badge__name">Cisco Networking Academy</span>
+                <span class="badge__meta"><img class="issuer" src="assets/images/logos/cisco.svg" alt="" decoding="async">Cisco · 2026</span>
+                <span class="badge__hint" aria-hidden="true">VIEW 3 BADGES +</span>
+              </button>
+              <template>
+                <img class="badge-dialog__img" src="assets/images/badges/cybersecurity.png" alt="Introduction to Cybersecurity badge from Cisco" width="340" height="340">
+                <p class="badge__meta"><img class="issuer" src="assets/images/logos/cisco.svg" alt="" decoding="async">Cisco Networking Academy · 2026</p>
+                <h3 class="badge-dialog__title" id="badge-dialog-title">Cisco Networking Academy</h3>
+                <p class="badge-dialog__text">Three Cisco badges covering cybersecurity, the Internet of Things and IT support.</p>
+                <p class="badge-dialog__sublabel">BADGES · 3</p>
+                <ul class="subs" role="list" tabindex="0" aria-label="BADGES · 3 — tap one to view it">
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/cybersecurity.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Introduction to Cybersecurity</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/cybersecurity.png" alt="Introduction to Cybersecurity badge — issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/cisco.svg" alt="" decoding="async">Cisco · Apr 23, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Introduction to Cybersecurity</h3>
+                      <ul class="tags" role="list"><li>Cybersecurity</li><li>Threat Detection</li><li>Network Vulnerabilities</li><li>Data Privacy</li><li>Cyber Best Practices</li></ul>
+                      <a class="btn btn--red" href="https://www.credly.com/badges/8e8ab7f1-1277-4e6a-b473-cec98724b0bf" target="_blank" rel="noopener noreferrer">VERIFY BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/iot.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>Introduction to IoT</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/iot.png" alt="Introduction to IoT badge — issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/cisco.svg" alt="" decoding="async">Cisco · Apr 21, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">Introduction to IoT</h3>
+                      <ul class="tags" role="list"><li>Internet of Things</li><li>Digital Transformation</li></ul>
+                      <a class="btn btn--red" href="https://www.credly.com/badges/5af0f210-1fc2-40d5-ad38-ec650dbe98f9" target="_blank" rel="noopener noreferrer">VERIFY BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                  <li>
+                    <button class="sub" type="button" data-sub>
+                      <img src="assets/images/badges/it-support.png" alt="" width="340" height="340" loading="lazy" decoding="async">
+                      <span>IT Customer Support Basics</span>
+                    </button>
+                    <template>
+                      <img class="badge-dialog__img" src="assets/images/badges/it-support.png" alt="IT Customer Support Basics badge — issued to Elijah Lord Andrei Flores" width="340" height="340">
+                      <p class="badge__meta"><img class="issuer" src="assets/images/logos/cisco.svg" alt="" decoding="async">Cisco · Apr 23, 2026</p>
+                      <h3 class="badge-dialog__title" id="badge-dialog-title">IT Customer Support Basics</h3>
+                      <ul class="tags" role="list"><li>Help Desk</li><li>Remote Troubleshooting</li><li>Technical Problem Solving</li><li>Documentation</li></ul>
+                      <a class="btn btn--red" href="https://www.credly.com/badges/aa546710-1314-41b3-aadc-5e036c1f277f" target="_blank" rel="noopener noreferrer">VERIFY BADGE<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+                    </template>
+                  </li>
+                </ul>
+                <a class="btn btn--red" href="https://www.credly.com/users/elijah-lord-andrei-flores" target="_blank" rel="noopener noreferrer">ALL MY BADGES<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+              </template>
+            </li>
+          </ul>
+          <div class="carousel__nav">
+            <button class="carousel__btn" type="button" data-carousel-next aria-label="Next badges"><span aria-hidden="true">→</span></button>
+            <button class="carousel__btn" type="button" data-carousel-prev aria-label="Previous badges"><span aria-hidden="true">←</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SYNC:credentials:end -->
+
+    <div class="checker" aria-hidden="true"></div>
+
+    <!-- ============================== FEATURED PROJECTS ==============================
+         Generated from one list; projects.html shows the same cards — keep both in step.
+         One <li class="card"> per project. Clicking a card opens its details (from its <template>) with a button to view it.
+         Tile colour: card--red, card--light or card--dark. Images live in assets/images/. -->
+    <section class="work container" id="projects" aria-labelledby="projects-title">
+      <header class="work__head">
+        <h2 class="display display--red" id="projects-title">PROJECTS</h2>
+        <a class="btn btn--red work__all" href="projects.html">VIEW ALL <span aria-hidden="true">→</span></a>
+      </header>
+
+      <div class="carousel" data-carousel>
+        <ul class="cards" role="list" data-carousel-track tabindex="0" aria-label="Projects — scroll sideways for more">
+          <li class="card card--dark">
+            <div class="card__tile card__tile--bare">
+              <span class="sticker sticker--red">E-Commerce</span>
+              <img src="assets/images/project-zentro.webp" alt="" width="1399" height="933" loading="lazy" decoding="async">
+            </div>
+            <p class="card__num">01 — E-COMMERCE WEBSITE</p>
+            <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">Zentro</button></h3>
+            <p class="card__desc">A responsive e-commerce website for browsing products, viewing details, and shopping across desktop and mobile.</p>
+            <template>
+              <img class="badge-dialog__img badge-dialog__img--project badge-dialog__img--bare" src="assets/images/project-zentro.webp" alt="Screenshot of Zentro" width="1399" height="933">
+              <p class="badge__meta">01 — E-COMMERCE WEBSITE</p>
+              <h3 class="badge-dialog__title" id="badge-dialog-title">Zentro</h3>
+              <p class="badge-dialog__text">A responsive e-commerce website for browsing products, viewing details, and shopping across desktop and mobile.</p>
+              <ul class="tags" role="list"><li>Product catalogue</li><li>Product details</li><li>Mobile-first</li></ul>
+              <a class="btn btn--red" href="https://zentro-chs.pages.dev" target="_blank" rel="noopener noreferrer">VIEW PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+          </li>
+
+          <li class="card card--red">
+            <div class="card__tile card__tile--bare">
+              <span class="sticker">Web App</span>
+              <img src="assets/images/project-menuhaus.webp" alt="" width="1400" height="933" decoding="async">
+            </div>
+            <p class="card__num">02 — WEB APPLICATION / SAAS</p>
+            <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">MenuHaus</button></h3>
+            <p class="card__desc">A digital menu platform for restaurants to create, manage, publish, and share mobile-first menus.</p>
+            <template>
+              <img class="badge-dialog__img badge-dialog__img--project badge-dialog__img--bare" src="assets/images/project-menuhaus.webp" alt="Screenshot of MenuHaus" width="1400" height="933">
+              <p class="badge__meta">02 — WEB APPLICATION / SAAS</p>
+              <h3 class="badge-dialog__title" id="badge-dialog-title">MenuHaus</h3>
+              <p class="badge-dialog__text">A digital menu platform for restaurants to create, manage, publish, and share mobile-first menus.</p>
+              <ul class="tags" role="list"><li>User accounts</li><li>Payments</li><li>Analytics</li><li>QR codes</li></ul>
+              <a class="btn btn--red" href="https://menuhaus.click" target="_blank" rel="noopener noreferrer">VIEW PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+          </li>
+
+
+          <li class="card card--dark">
+            <div class="card__tile card__tile--bare">
+              <span class="sticker sticker--red">Portfolio</span>
+              <img src="assets/images/project-elijahportfolio.webp" alt="" width="1400" height="933" decoding="async">
+            </div>
+            <p class="card__num">03 — PORTFOLIO / WEB</p>
+            <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">elijahportfolio.xyz</button></h3>
+            <p class="card__desc">A personal portfolio website built as an experiment in modern web development and interactive UI.</p>
+            <template>
+              <img class="badge-dialog__img badge-dialog__img--project badge-dialog__img--bare" src="assets/images/project-elijahportfolio.webp" alt="Screenshot of elijahportfolio.xyz" width="1400" height="933">
+              <p class="badge__meta">03 — PORTFOLIO / WEB</p>
+              <h3 class="badge-dialog__title" id="badge-dialog-title">elijahportfolio.xyz</h3>
+              <p class="badge-dialog__text">A personal portfolio website built as an experiment in modern web development and interactive UI.</p>
+              <ul class="tags" role="list"><li>Interactive UI</li><li>Animation</li><li>Performance</li></ul>
+              <a class="btn btn--red" href="https://elijahportfolio.xyz" target="_blank" rel="noopener noreferrer">VIEW PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+          </li>
+
+          <li class="card card--red">
+            <div class="card__tile card__tile--bare">
+              <span class="sticker">Website</span>
+              <img src="assets/images/project-damichele.webp" alt="" width="1400" height="933" loading="lazy" decoding="async">
+            </div>
+            <p class="card__num">04 — RESTAURANT WEBSITE</p>
+            <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">Da Michele KL</button></h3>
+            <p class="card__desc">A restaurant-focused digital experience designed to present a brand, showcase its offerings, and make essential information easy to access.</p>
+            <template>
+              <img class="badge-dialog__img badge-dialog__img--project badge-dialog__img--bare" src="assets/images/project-damichele.webp" alt="Screenshot of Da Michele KL" width="1400" height="933">
+              <p class="badge__meta">04 — RESTAURANT WEBSITE</p>
+              <h3 class="badge-dialog__title" id="badge-dialog-title">Da Michele KL</h3>
+              <p class="badge-dialog__text">A restaurant-focused digital experience designed to present a brand, showcase its offerings, and make essential information easy to access.</p>
+              <ul class="tags" role="list"><li>Brand showcase</li><li>Menu &amp; offerings</li><li>Contact info</li></ul>
+              <a class="btn btn--red" href="https://damichele-kl.pages.dev/" target="_blank" rel="noopener noreferrer">VIEW PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+          </li>
+
+          <li class="card card--light">
+            <div class="card__tile card__tile--bare">
+              <span class="sticker sticker--dark">Website</span>
+              <img src="assets/images/project-foodelic.webp" alt="" width="1400" height="933" loading="lazy" decoding="async">
+            </div>
+            <p class="card__num">05 — FOOD COURT WEBSITE</p>
+            <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">Foodelic</button></h3>
+            <p class="card__desc">A responsive website for a food court, built to help visitors discover stalls and drinks, plan a visit, and order ahead.</p>
+            <template>
+              <img class="badge-dialog__img badge-dialog__img--project badge-dialog__img--bare" src="assets/images/project-foodelic.webp" alt="Screenshot of Foodelic" width="1400" height="933">
+              <p class="badge__meta">05 — FOOD COURT WEBSITE</p>
+              <h3 class="badge-dialog__title" id="badge-dialog-title">Foodelic</h3>
+              <p class="badge-dialog__text">A responsive website for a food court, built to help visitors discover stalls and drinks, plan a visit, and order ahead.</p>
+              <ul class="tags" role="list"><li>Stall &amp; drink discovery</li><li>Visit planning</li><li>Order ahead</li></ul>
+              <a class="btn btn--red" href="https://site-x.github.io/Foodelic-draft/" target="_blank" rel="noopener noreferrer">VIEW PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+          </li>
+
+          <!-- No public link or screenshots for this one: the preview is an abstract illustration. -->
+          <li class="card card--dark">
+            <div class="card__tile">
+              <span class="sticker sticker--red">Platform</span>
+              <svg class="card__art" viewBox="0 0 300 200" role="img" aria-label="Abstract illustration of a video platform admin dashboard">
+                <rect width="300" height="200" fill="#0b0b0b"/>
+                <rect width="64" height="200" fill="#141414"/>
+                <rect x="10" y="14" width="34" height="7" rx="2" fill="#e50914"/>
+                <g fill="#2e2e2e"><rect x="10" y="40" width="44" height="6" rx="2"/><rect x="10" y="56" width="36" height="6" rx="2"/><rect x="10" y="72" width="40" height="6" rx="2"/><rect x="10" y="104" width="44" height="6" rx="2"/><rect x="10" y="120" width="30" height="6" rx="2"/></g>
+                <rect x="6" y="52" width="52" height="14" rx="3" fill="none" stroke="#4a4a4a"/>
+                <rect x="78" y="14" width="70" height="9" rx="2" fill="#f5f5f5"/>
+                <rect x="78" y="34" width="150" height="14" rx="3" fill="#161616" stroke="#2b2b2b"/>
+                <rect x="234" y="34" width="52" height="14" rx="3" fill="#f5f5f5"/>
+                <g>
+                  <g transform="translate(78 60)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="78" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="46" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+                  <g transform="translate(78 92)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="64" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="52" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+                  <g transform="translate(78 124)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="84" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="40" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="#e50914"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+                  <g transform="translate(78 156)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="70" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="48" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+                </g>
+              </svg>
+            </div>
+            <p class="card__num">06 — VIDEO PLATFORM / WEB APPLICATION</p>
+            <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">Video Platform</button></h3>
+            <p class="card__desc">A video streaming platform with a searchable catalogue and an admin dashboard for managing and moderating content.</p>
+            <template>
+              <svg class="badge-dialog__img badge-dialog__img--project badge-dialog__art" viewBox="0 0 300 200" role="img" aria-label="Abstract illustration of a video platform admin dashboard">
+  <rect width="300" height="200" fill="#0b0b0b"/>
+  <rect width="64" height="200" fill="#141414"/>
+  <rect x="10" y="14" width="34" height="7" rx="2" fill="#e50914"/>
+  <g fill="#2e2e2e"><rect x="10" y="40" width="44" height="6" rx="2"/><rect x="10" y="56" width="36" height="6" rx="2"/><rect x="10" y="72" width="40" height="6" rx="2"/><rect x="10" y="104" width="44" height="6" rx="2"/><rect x="10" y="120" width="30" height="6" rx="2"/></g>
+  <rect x="6" y="52" width="52" height="14" rx="3" fill="none" stroke="#4a4a4a"/>
+  <rect x="78" y="14" width="70" height="9" rx="2" fill="#f5f5f5"/>
+  <rect x="78" y="34" width="150" height="14" rx="3" fill="#161616" stroke="#2b2b2b"/>
+  <rect x="234" y="34" width="52" height="14" rx="3" fill="#f5f5f5"/>
+  <g>
+    <g transform="translate(78 60)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="78" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="46" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+    <g transform="translate(78 92)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="64" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="52" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+    <g transform="translate(78 124)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="84" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="40" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="#e50914"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+    <g transform="translate(78 156)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="70" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="48" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+  </g>
+</svg>
+              <p class="badge__meta">06 — VIDEO PLATFORM / WEB APPLICATION</p>
+              <h3 class="badge-dialog__title" id="badge-dialog-title">Video Platform</h3>
+              <p class="badge-dialog__text">A video streaming platform with a searchable catalogue and an admin dashboard for managing and moderating content.</p>
+              <ul class="tags" role="list"><li>Catalogue &amp; search</li><li>Admin dashboard</li><li>Moderation queue</li></ul>
+              <a class="btn btn--red" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>ASK ABOUT THIS PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+            </template>
+          </li>
+        </ul>
+
+        <div class="carousel__nav">
+          <button class="carousel__btn" type="button" data-carousel-next aria-label="Next projects"><span aria-hidden="true">→</span></button>
+          <button class="carousel__btn" type="button" data-carousel-prev aria-label="Previous projects"><span aria-hidden="true">←</span></button>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="checker" aria-hidden="true"></div>
+
+    <!-- ============================== PROCESS ============================== -->
+    <section class="process" id="process" aria-labelledby="process-title">
+      <div class="container process__inner">
+        <div class="process__card reveal">
+          <p class="process__kicker">PROCESS</p>
+          <h2 class="process__title" id="process-title">FROM IDEA<br>TO DEPLOYMENT.</h2>
+          <ol class="steps" role="list">
+            <li><span class="steps__num">01</span><div><h3>DISCOVER</h3><p>Understand the goal, audience, and requirements.</p></div></li>
+            <li><span class="steps__num">02</span><div><h3>DESIGN</h3><p>Plan the interface, structure, and user experience.</p></div></li>
+            <li><span class="steps__num">03</span><div><h3>DEVELOP</h3><p>Build responsive interfaces and implement the required functionality.</p></div></li>
+            <li><span class="steps__num">04</span><div><h3>DEPLOY</h3><p>Test, optimize, and launch the website.</p></div></li>
+          </ol>
+          <a class="btn btn--red" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>START A PROJECT<span class="visually-hidden"> on WhatsApp (opens in a new tab)</span></a>
+        </div>
+
+        <div class="boxes" aria-hidden="true">
+          <div class="box"><b>01</b><span>DISCOVER</span></div>
+          <div class="box box--red"><b>02</b><span>DESIGN</span></div>
+          <div class="box box--red"><b>03</b><span>DEVELOP</span></div>
+          <div class="box"><b>04</b><span>DEPLOY</span></div>
+          <div class="box"><b>→</b><span>LIVE</span></div>
+          <div class="box box--red"><b>E/D</b><span>BUILD. TEST. SHIP.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="checker" aria-hidden="true"></div>
+
+    <!-- ============================== STACK / CAPABILITIES ==============================
+         Edit the lists to match the tools you use. One <li> per tool. -->
+    <section class="caps" id="stack" aria-labelledby="stack-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="stack-title">Stack and capabilities</h2>
+
+        <div class="specs reveal">
+          <div class="specs__col specs__col--wide">
+            <h3>Tech Stack</h3>
+            <ul class="specs__list--2" role="list"><li>HTML, CSS &amp; JavaScript</li><li>React</li><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Node.js</li><li>Supabase</li><li>PostgreSQL</li><li>AI-assisted development</li><li class="specs__more">And more...</li></ul>
+          </div>
+          <div class="specs__col">
+            <h3>APIs &amp; Integrations</h3>
+            <ul role="list"><li>Third-party APIs</li><li>Webhooks</li><li>OAuth APIs</li><li>API authentication</li><li class="specs__more">And more...</li></ul>
+          </div>
+          <div class="specs__col">
+            <h3>Deployment</h3>
+            <ul role="list"><li>Cloudflare</li><li>Git &amp; GitHub</li><li>Environment variables</li><li>Domains, DNS &amp; SSL</li><li class="specs__more">And more...</li></ul>
+          </div>
+          <div class="specs__col">
+            <h3>Web Features</h3>
+            <ul role="list"><li>QR codes</li><li>Image uploads &amp; compression</li><li>Search &amp; filtering</li><li>Analytics &amp; SEO</li><li>Payment gateway integration</li><li class="specs__more">And more...</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="checker" aria-hidden="true"></div>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <img class="contact__bg" src="assets/images/project-menuhaus.webp" alt="" width="1400" height="933" loading="lazy" decoding="async">
+      <div class="container contact__inner reveal">
+        <h2 class="contact__title" id="contact-title">
+          <span>HAVE AN IDEA?</span>
+          <span>LET'S BUILD IT.</span>
+        </h2>
+        <p class="contact__lead">Have a website or web application in mind? Let's talk about what you want to build.</p>
+        <a class="btn btn--light btn--xl" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>
+          CONTACT ME ON WHATSAPP<span class="visually-hidden"> (opens in a new tab)</span>
+        </a>
+
+        <!-- Plain links. The addresses are also set from CONFIG in script.js. -->
+        <p class="contact__links">
+          <a href="mailto:elijahflores0204@gmail.com" data-email-link>elijahflores0204@gmail.com</a>
+          <span aria-hidden="true">/</span>
+          <a href="https://elijahflores.xyz" target="_blank" rel="noopener noreferrer" data-socials-link>All my socials: elijahflores.xyz<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </p>
+      </div>
+    </section>
+
+    <div class="checker" aria-hidden="true"></div>
+
+    <!-- ============================== TWO PANELS ============================== -->
+    <section class="duo container" aria-label="More">
+      <a class="duo__panel duo__panel--red" href="https://menuhaus.click" target="_blank" rel="noopener noreferrer">
+        <span class="duo__text">
+          <span class="duo__title">WANT TO SEE<br>IT LIVE?</span>
+          <span class="duo__link">VISIT MENUHAUS<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></span>
+        </span>
+        <img src="assets/images/project-menuhaus.webp" alt="" width="1400" height="933" loading="lazy" decoding="async">
+      </a>
+      <a class="duo__panel duo__panel--dark" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>
+        <span class="duo__text">
+          <span class="duo__title">NEED A<br>DIFFERENT KIND<br>OF WEBSITE?</span>
+          <span class="duo__link">MESSAGE ME<span class="visually-hidden"> on WhatsApp (opens in a new tab)</span> <span aria-hidden="true">→</span></span>
+        </span>
+        <img class="duo__img--bare" src="assets/images/project-portfolio.webp" alt="" width="1000" height="1113" loading="lazy" decoding="async">
+      </a>
+    </section>
+
+    <div class="checker" aria-hidden="true"></div>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__lead">
+        <h2>Start a project!</h2>
+        <p>Have a website or web application in mind? Send a message — no forms, no waiting.</p>
+        <a class="btn btn--red footer__btn" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>CONTACT ME<span class="visually-hidden"> on WhatsApp (opens in a new tab)</span></a>
+        <!-- Written here so they work without JavaScript. script.js can override a link's address from CONFIG. -->
+        <ul class="socials" role="list" aria-label="Social profiles">
+          <li><a href="https://github.com/site-x" target="_blank" rel="noopener noreferrer" data-profile="github" aria-label="GitHub (opens in a new tab)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a></li>
+          <li><a href="https://www.instagram.com/primelordd/" target="_blank" rel="noopener noreferrer" data-profile="instagram" aria-label="Instagram (opens in a new tab)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.75" fill="currentColor"/></svg></a></li>
+          <li><a href="https://www.facebook.com/dreiixx1/" target="_blank" rel="noopener noreferrer" data-profile="facebook" aria-label="Facebook (opens in a new tab)"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
+        </ul>
+      </div>
+
+      <nav class="footer__col" aria-label="Footer">
+        <h3>EXPLORE:</h3>
+        <a href="credentials.html">Credentials</a>
+        <a href="projects.html">Projects</a>
+        <a href="#stack">Stack</a>
+        <a href="about.html">About</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Projects">
+        <h3>PROJECTS:</h3>
+        <a href="https://menuhaus.click" target="_blank" rel="noopener noreferrer">MenuHaus</a>
+        <a href="https://elijahportfolio.xyz" target="_blank" rel="noopener noreferrer">elijahportfolio.xyz</a>
+        <a href="https://damichele-kl.pages.dev/" target="_blank" rel="noopener noreferrer">Da Michele KL</a>
+        <a href="https://site-x.github.io/Foodelic-draft/" target="_blank" rel="noopener noreferrer">Foodelic</a>
+      </nav>
+    </div>
+
+    <div class="container footer__base">
+      <p>COPYRIGHT <span data-year>2026</span> © ELIJAH FLORES</p>
+      <a href="#top">BACK TO TOP <span aria-hidden="true">↑</span></a>
+    </div>
+
+    <p class="footer__wordmark" aria-hidden="true">ELIJAH / DEV</p>
+
+    <a class="footer__band" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>
+      YOUR WEBSITE STARTS HERE <span aria-hidden="true">◆</span> MESSAGE ME ON WHATSAPP — CLICK HERE<span class="visually-hidden"> (opens in a new tab)</span>
+    </a>
+  </footer>
+
+  <dialog class="badge-dialog" data-badge-dialog data-badge-viewall="credentials.html" aria-labelledby="badge-dialog-title">
+    <button class="badge-dialog__close" type="button" data-badge-close aria-label="Close"><span aria-hidden="true">×</span></button>
+    <div class="badge-dialog__body" data-badge-body></div>
+  </dialog>
+
+  <a class="to-top" href="#top" data-to-top hidden>
+    <span aria-hidden="true">↑</span> TOP<span class="visually-hidden"> — back to top of page</span>
+  </a>
+
+  <script src="script.js" defer onerror="document.documentElement.classList.remove('js')"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://elijahlinks.vercel.app/sitemap.xml
+Sitemap: https://www.elijahflores.xyz/sitemap.xml

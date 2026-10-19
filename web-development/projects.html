@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="https://www.elijahflores.xyz/web-development/projects.html">
+  <meta property="og:url" content="https://www.elijahflores.xyz/web-development/projects.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects — Elijah Flores | ELIJAH / DEV</title>
+  <meta name="description" content="Websites and web applications built by Elijah Flores: MenuHaus, Da Michele KL, Foodelic and more.">
+  <meta name="author" content="Elijah Flores">
+  <meta name="theme-color" content="#080808">
+  <meta name="color-scheme" content="dark">
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== STATUS STRIP ============================== -->
+  <div class="container">
+    <p class="topbar">
+      <span aria-hidden="true">MADE FOR THE WEB</span>
+      <span>ELIJAH FLORES · WEB DEVELOPER · BUILDING ON THE WEB</span>
+      <span aria-hidden="true">MADE FOR THE WEB</span>
+    </p>
+  </div>
+
+  <!-- ============================== NAVIGATION ============================== -->
+  <header class="nav" data-nav>
+    <div class="container nav__inner">
+      <div class="nav__left">
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-menu" data-nav-toggle>
+          <span class="nav__toggle-icon" aria-hidden="true"></span>
+          <span data-nav-toggle-label>Menu</span>
+        </button>
+        <nav class="nav__menu" id="nav-menu" aria-label="Primary" data-nav-menu>
+          <a class="nav__link nav__link--home" href="index.html">Home</a>
+          <a class="nav__link" href="credentials.html">Credentials</a>
+          <a class="nav__link" href="projects.html" aria-current="page">Projects</a>
+          <a class="nav__link" href="index.html#stack">Stack</a>
+          <a class="nav__link" href="about.html">About</a>
+        </nav>
+      </div>
+
+      <a class="brand" href="index.html" aria-label="ELIJAH / DEV — home">
+        <span class="brand__dot" aria-hidden="true"></span>
+        <span>ELIJAH <span class="brand__slash">/</span> DEV</span>
+      </a>
+
+      <a class="btn btn--red nav__cta" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>
+        CONTACT<span class="nav__cta-extra">&nbsp;ME</span><span class="visually-hidden"> on WhatsApp (opens in a new tab)</span>
+      </a>
+    </div>
+  </header>
+
+  <div class="checker" aria-hidden="true"></div>
+
+  <!-- Generated from one list; the PROJECTS carousel in index.html shows the same cards — keep both in step.
+       Clicking a card opens its details (from its <template>) with a button to view the project. -->
+  <main id="main" class="work container projects-page">
+    <a class="creds-page__back" href="index.html#projects">← BACK TO HOME</a>
+    <header class="work__head">
+      <h1 class="display display--red">PROJECTS</h1>
+      <p class="work__count" aria-hidden="true">01—06</p>
+    </header>
+    <p class="creds-page__intro">Websites and web apps I've built. Tap one for the details, then open it.</p>
+
+    <ul class="cards cards--grid" role="list">
+        <li class="card card--dark">
+          <div class="card__tile card__tile--bare">
+            <span class="sticker sticker--red">E-Commerce</span>
+            <img src="assets/images/project-zentro.webp" alt="" width="1399" height="933" loading="lazy" decoding="async">
+          </div>
+          <p class="card__num">01 — E-COMMERCE WEBSITE</p>
+          <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">Zentro</button></h3>
+          <p class="card__desc">A responsive e-commerce website for browsing products, viewing details, and shopping across desktop and mobile.</p>
+          <template>
+            <img class="badge-dialog__img badge-dialog__img--project badge-dialog__img--bare" src="assets/images/project-zentro.webp" alt="Screenshot of Zentro" width="1399" height="933">
+            <p class="badge__meta">01 — E-COMMERCE WEBSITE</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">Zentro</h3>
+            <p class="badge-dialog__text">A responsive e-commerce website for browsing products, viewing details, and shopping across desktop and mobile.</p>
+            <ul class="tags" role="list"><li>Product catalogue</li><li>Product details</li><li>Mobile-first</li></ul>
+            <a class="btn btn--red" href="https://zentro-chs.pages.dev" target="_blank" rel="noopener noreferrer">VIEW PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+          </template>
+        </li>
+
+        <li class="card card--red">
+          <div class="card__tile card__tile--bare">
+            <span class="sticker">Web App</span>
+            <img src="assets/images/project-menuhaus.webp" alt="" width="1400" height="933" decoding="async">
+          </div>
+          <p class="card__num">02 — WEB APPLICATION / SAAS</p>
+          <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">MenuHaus</button></h3>
+          <p class="card__desc">A digital menu platform for restaurants to create, manage, publish, and share mobile-first menus.</p>
+          <template>
+            <img class="badge-dialog__img badge-dialog__img--project badge-dialog__img--bare" src="assets/images/project-menuhaus.webp" alt="Screenshot of MenuHaus" width="1400" height="933">
+            <p class="badge__meta">02 — WEB APPLICATION / SAAS</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">MenuHaus</h3>
+            <p class="badge-dialog__text">A digital menu platform for restaurants to create, manage, publish, and share mobile-first menus.</p>
+            <ul class="tags" role="list"><li>User accounts</li><li>Payments</li><li>Analytics</li><li>QR codes</li></ul>
+            <a class="btn btn--red" href="https://menuhaus.click" target="_blank" rel="noopener noreferrer">VIEW PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+          </template>
+        </li>
+
+
+        <li class="card card--dark">
+          <div class="card__tile card__tile--bare">
+            <span class="sticker sticker--red">Portfolio</span>
+            <img src="assets/images/project-elijahportfolio.webp" alt="" width="1400" height="933" decoding="async">
+          </div>
+          <p class="card__num">03 — PORTFOLIO / WEB</p>
+          <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">elijahportfolio.xyz</button></h3>
+          <p class="card__desc">A personal portfolio website built as an experiment in modern web development and interactive UI.</p>
+          <template>
+            <img class="badge-dialog__img badge-dialog__img--project badge-dialog__img--bare" src="assets/images/project-elijahportfolio.webp" alt="Screenshot of elijahportfolio.xyz" width="1400" height="933">
+            <p class="badge__meta">03 — PORTFOLIO / WEB</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">elijahportfolio.xyz</h3>
+            <p class="badge-dialog__text">A personal portfolio website built as an experiment in modern web development and interactive UI.</p>
+            <ul class="tags" role="list"><li>Interactive UI</li><li>Animation</li><li>Performance</li></ul>
+            <a class="btn btn--red" href="https://elijahportfolio.xyz" target="_blank" rel="noopener noreferrer">VIEW PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+          </template>
+        </li>
+
+        <li class="card card--red">
+          <div class="card__tile card__tile--bare">
+            <span class="sticker">Website</span>
+            <img src="assets/images/project-damichele.webp" alt="" width="1400" height="933" loading="lazy" decoding="async">
+          </div>
+          <p class="card__num">04 — RESTAURANT WEBSITE</p>
+          <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">Da Michele KL</button></h3>
+          <p class="card__desc">A restaurant-focused digital experience designed to present a brand, showcase its offerings, and make essential information easy to access.</p>
+          <template>
+            <img class="badge-dialog__img badge-dialog__img--project badge-dialog__img--bare" src="assets/images/project-damichele.webp" alt="Screenshot of Da Michele KL" width="1400" height="933">
+            <p class="badge__meta">04 — RESTAURANT WEBSITE</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">Da Michele KL</h3>
+            <p class="badge-dialog__text">A restaurant-focused digital experience designed to present a brand, showcase its offerings, and make essential information easy to access.</p>
+            <ul class="tags" role="list"><li>Brand showcase</li><li>Menu &amp; offerings</li><li>Contact info</li></ul>
+            <a class="btn btn--red" href="https://damichele-kl.pages.dev/" target="_blank" rel="noopener noreferrer">VIEW PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+          </template>
+        </li>
+
+        <li class="card card--light">
+          <div class="card__tile card__tile--bare">
+            <span class="sticker sticker--dark">Website</span>
+            <img src="assets/images/project-foodelic.webp" alt="" width="1400" height="933" loading="lazy" decoding="async">
+          </div>
+          <p class="card__num">05 — FOOD COURT WEBSITE</p>
+          <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">Foodelic</button></h3>
+          <p class="card__desc">A responsive website for a food court, built to help visitors discover stalls and drinks, plan a visit, and order ahead.</p>
+          <template>
+            <img class="badge-dialog__img badge-dialog__img--project badge-dialog__img--bare" src="assets/images/project-foodelic.webp" alt="Screenshot of Foodelic" width="1400" height="933">
+            <p class="badge__meta">05 — FOOD COURT WEBSITE</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">Foodelic</h3>
+            <p class="badge-dialog__text">A responsive website for a food court, built to help visitors discover stalls and drinks, plan a visit, and order ahead.</p>
+            <ul class="tags" role="list"><li>Stall &amp; drink discovery</li><li>Visit planning</li><li>Order ahead</li></ul>
+            <a class="btn btn--red" href="https://site-x.github.io/Foodelic-draft/" target="_blank" rel="noopener noreferrer">VIEW PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+          </template>
+        </li>
+
+        <!-- No public link or screenshots for this one: the preview is an abstract illustration. -->
+        <li class="card card--dark">
+          <div class="card__tile">
+            <span class="sticker sticker--red">Platform</span>
+            <svg class="card__art" viewBox="0 0 300 200" role="img" aria-label="Abstract illustration of a video platform admin dashboard">
+              <rect width="300" height="200" fill="#0b0b0b"/>
+              <rect width="64" height="200" fill="#141414"/>
+              <rect x="10" y="14" width="34" height="7" rx="2" fill="#e50914"/>
+              <g fill="#2e2e2e"><rect x="10" y="40" width="44" height="6" rx="2"/><rect x="10" y="56" width="36" height="6" rx="2"/><rect x="10" y="72" width="40" height="6" rx="2"/><rect x="10" y="104" width="44" height="6" rx="2"/><rect x="10" y="120" width="30" height="6" rx="2"/></g>
+              <rect x="6" y="52" width="52" height="14" rx="3" fill="none" stroke="#4a4a4a"/>
+              <rect x="78" y="14" width="70" height="9" rx="2" fill="#f5f5f5"/>
+              <rect x="78" y="34" width="150" height="14" rx="3" fill="#161616" stroke="#2b2b2b"/>
+              <rect x="234" y="34" width="52" height="14" rx="3" fill="#f5f5f5"/>
+              <g>
+                <g transform="translate(78 60)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="78" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="46" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+                <g transform="translate(78 92)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="64" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="52" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+                <g transform="translate(78 124)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="84" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="40" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="#e50914"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+                <g transform="translate(78 156)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="70" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="48" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+              </g>
+            </svg>
+          </div>
+          <p class="card__num">06 — VIDEO PLATFORM / WEB APPLICATION</p>
+          <h3 class="card__name"><button class="card__open" type="button" data-badge aria-haspopup="dialog">Video Platform</button></h3>
+          <p class="card__desc">A video streaming platform with a searchable catalogue and an admin dashboard for managing and moderating content.</p>
+          <template>
+            <svg class="badge-dialog__img badge-dialog__img--project badge-dialog__art" viewBox="0 0 300 200" role="img" aria-label="Abstract illustration of a video platform admin dashboard">
+  <rect width="300" height="200" fill="#0b0b0b"/>
+  <rect width="64" height="200" fill="#141414"/>
+  <rect x="10" y="14" width="34" height="7" rx="2" fill="#e50914"/>
+  <g fill="#2e2e2e"><rect x="10" y="40" width="44" height="6" rx="2"/><rect x="10" y="56" width="36" height="6" rx="2"/><rect x="10" y="72" width="40" height="6" rx="2"/><rect x="10" y="104" width="44" height="6" rx="2"/><rect x="10" y="120" width="30" height="6" rx="2"/></g>
+  <rect x="6" y="52" width="52" height="14" rx="3" fill="none" stroke="#4a4a4a"/>
+  <rect x="78" y="14" width="70" height="9" rx="2" fill="#f5f5f5"/>
+  <rect x="78" y="34" width="150" height="14" rx="3" fill="#161616" stroke="#2b2b2b"/>
+  <rect x="234" y="34" width="52" height="14" rx="3" fill="#f5f5f5"/>
+  <g>
+    <g transform="translate(78 60)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="78" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="46" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+    <g transform="translate(78 92)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="64" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="52" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+    <g transform="translate(78 124)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="84" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="40" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="#e50914"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+    <g transform="translate(78 156)"><rect width="34" height="22" rx="3" fill="#1f1f1f"/><path d="M14 6l9 5-9 5z" fill="#e50914"/><rect x="44" y="4" width="70" height="5" rx="2" fill="#3a3a3a"/><rect x="44" y="14" width="48" height="4" rx="2" fill="#262626"/><rect x="150" y="6" width="28" height="10" rx="5" fill="none" stroke="#f5f5f5"/><rect x="188" y="9" width="20" height="4" rx="2" fill="#3a3a3a"/></g>
+  </g>
+</svg>
+            <p class="badge__meta">06 — VIDEO PLATFORM / WEB APPLICATION</p>
+            <h3 class="badge-dialog__title" id="badge-dialog-title">Video Platform</h3>
+            <p class="badge-dialog__text">A video streaming platform with a searchable catalogue and an admin dashboard for managing and moderating content.</p>
+            <ul class="tags" role="list"><li>Catalogue &amp; search</li><li>Admin dashboard</li><li>Moderation queue</li></ul>
+            <a class="btn btn--red" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>ASK ABOUT THIS PROJECT<span class="visually-hidden"> (opens in a new tab)</span> <span aria-hidden="true">→</span></a>
+          </template>
+        </li>
+    </ul>
+
+    <a class="btn btn--red projects__more" href="index.html">BACK TO HOME</a>
+  </main>
+
+  <div class="checker" aria-hidden="true"></div>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <img class="contact__bg" src="assets/images/project-menuhaus.webp" alt="" width="1400" height="933" loading="lazy" decoding="async">
+      <div class="container contact__inner reveal">
+        <h2 class="contact__title" id="contact-title">
+          <span>HAVE AN IDEA?</span>
+          <span>LET'S BUILD IT.</span>
+        </h2>
+        <p class="contact__lead">Have a website or web application in mind? Let's talk about what you want to build.</p>
+        <a class="btn btn--light btn--xl" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>
+          CONTACT ME ON WHATSAPP<span class="visually-hidden"> (opens in a new tab)</span>
+        </a>
+
+        <!-- Plain links. The addresses are also set from CONFIG in script.js. -->
+        <p class="contact__links">
+          <a href="mailto:elijahflores0204@gmail.com" data-email-link>elijahflores0204@gmail.com</a>
+          <span aria-hidden="true">/</span>
+          <a href="https://elijahflores.xyz" target="_blank" rel="noopener noreferrer" data-socials-link>All my socials: elijahflores.xyz<span class="visually-hidden"> (opens in a new tab)</span></a>
+        </p>
+      </div>
+    </section>
+
+  <dialog class="badge-dialog" data-badge-dialog aria-labelledby="badge-dialog-title">
+    <button class="badge-dialog__close" type="button" data-badge-close aria-label="Close"><span aria-hidden="true">×</span></button>
+    <div class="badge-dialog__body" data-badge-body></div>
+  </dialog>
+
+  <script src="script.js" defer onerror="document.documentElement.classList.remove('js')"></script>
+</body>
+</html>
