@@ -75,27 +75,27 @@
     <!-- ============================== HERO ============================== -->
     <section class="hero container" aria-labelledby="hero-title" data-hero>
       <div class="hero__panel">
-        <!-- Faint project photos behind the title. Swap or remove any <img>; strength is --photo-opacity in styles.css. -->
-        <div class="hero__photos" aria-hidden="true">
-          <img class="hero__photo hero__photo--a" src="assets/images/project-menuhaus.webp" alt="" width="1400" height="933" decoding="async" fetchpriority="low">
-          <img class="hero__photo hero__photo--b" src="assets/images/project-damichele.webp" alt="" width="1400" height="933" decoding="async" fetchpriority="low">
-          <img class="hero__photo hero__photo--c" src="assets/images/project-elijahportfolio.webp" alt="" width="1400" height="933" decoding="async" fetchpriority="low">
-          <img class="hero__photo hero__photo--d" src="assets/images/project-foodelic.webp" alt="" width="1400" height="933" decoding="async" fetchpriority="low">
-          <img class="hero__photo hero__photo--me" src="assets/images/elijah-flores.webp" alt="" width="1012" height="1012" decoding="async" fetchpriority="low">
-        </div>
         <h1 class="hero__title" id="hero-title">
           <span><span class="hero__w">ELIJAH</span> <span class="hero__w">FLORES</span></span>
           <span class="hero__sub outline"><span class="hero__w">WEB</span> <span class="hero__w">DEVELOPER</span></span>
         </h1>
-        <a class="hero__badges" href="credentials.html" aria-label="Featured credentials — see all credentials">
-          <ul role="list"><li><img src="assets/images/badges/AI-Professional.png" alt="Google AI Professional Certificate" title="Google AI Professional Certificate" width="340" height="340" loading="lazy" decoding="async"></li><li><img src="assets/images/badges/ai-app-building.png" alt="Google AI for App Building" title="Google AI for App Building" width="340" height="340" loading="lazy" decoding="async"></li><li><img src="assets/images/badges/ms-github-advanced-security.svg" alt="GitHub Advanced Security" title="GitHub Advanced Security" width="340" height="340" loading="lazy" decoding="async"></li><li><img src="assets/images/badges/ai-data-analysis.png" alt="Google AI for Data Analysis" title="Google AI for Data Analysis" width="340" height="340" loading="lazy" decoding="async"></li><li><img src="assets/images/badges/ai-app-deployment.png" alt="Google AI for App Deployment" title="Google AI for App Deployment" width="340" height="340" loading="lazy" decoding="async"></li></ul>
-        </a>
+        <p class="hero__lede">I design and build fast, good-looking websites for businesses that want to be found and trusted online.</p>
         <div class="hero__actions">
+          <a class="btn btn--red btn--xl" href="projects.html">SEE MY WORK</a>
           <a class="btn btn--light btn--xl" href="https://wa.me/639694589629" target="_blank" rel="noopener noreferrer" data-whatsapp>
             CONTACT ME<span class="visually-hidden"> on WhatsApp (opens in a new tab)</span>
           </a>
-          <a class="btn btn--dark btn--xl" href="projects.html">SEE MY WORK</a>
         </div>
+        <!-- Showreel in a browser frame. Plays muted on a loop; the button plays it with sound. -->
+        <figure class="hero__frame" data-reel>
+          <div class="hero__bar" aria-hidden="true"><i></i><i></i><i></i><span>ELIJAH / DEV</span></div>
+          <div class="hero__screen">
+            <video class="hero__video" src="assets/video/hero.mp4" poster="assets/video/hero-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="Showreel of my recent web projects"></video>
+            <button class="hero__play" type="button" aria-label="Play showreel with sound">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+            </button>
+          </div>
+        </figure>
       </div>
     </section>
 

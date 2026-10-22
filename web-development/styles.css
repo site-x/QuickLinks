@@ -343,48 +343,46 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 }
 
 /* ---------- 5. Hero & marquee ---------- */
-.hero { --hero-chrome: 12.25rem; padding-block: clamp(1rem, 2.5vw, 1.75rem); }
-@media (max-width: 899.98px) { .hero { --hero-chrome: 10.5rem; } }
+.hero { padding-block: clamp(2.5rem, 6vw, 5rem) clamp(2.5rem, 5vw, 4rem); }
 .hero__panel {
-  --outline-fill: var(--red);
   position: relative;
+  isolation: isolate;
   display: grid;
-  align-content: center;
   justify-items: center;
-  gap: clamp(1.75rem, 4vw, 3rem);
-  /* Fill the first screen: viewport height minus the strip, nav, divider and hero padding above/below */
-  min-height: max(24rem, calc(100vh - var(--hero-chrome)));
-  min-height: max(24rem, calc(100svh - var(--hero-chrome)));
-  padding: clamp(2.5rem, 6vw, 5rem) clamp(0.75rem, 3vw, 2.5rem);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background-color: var(--red);
-  /* thin technical grid over the red */
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.09) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
-  background-size: 3.5rem 3.5rem;
-  background-position: center;
+  gap: clamp(1.25rem, 3vw, 2rem);
   text-align: center;
 }
+/* Red is the light, not the wall: a glow behind the headline and a faint grid that fades out */
+.hero__panel::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -6rem -50vw -4rem;
+  background:
+    radial-gradient(ellipse 60% 55% at 50% 38%, rgba(229, 9, 20, 0.34), transparent 70%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px) 0 0 / 3.5rem 3.5rem,
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) 0 0 / 3.5rem 3.5rem;
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 20%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 40%, #000 20%, transparent 75%);
+  pointer-events: none;
+}
 .hero__title {
-  font-size: clamp(1.5rem, 7.7vw, 7.25rem);
+  font-size: clamp(2rem, 7vw, 6rem);
   font-weight: 800;
   font-stretch: var(--wide);
-  line-height: 0.94;
+  line-height: 0.98;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   color: #fff;
 }
 .hero__title span { display: block; white-space: nowrap; }
-.hero__title .outline { -webkit-text-stroke-color: #fff; }
-.hero__title .hero__sub { margin-top: 0.12em; font-size: 0.75em; }
+.hero__title .hero__sub { margin-top: 0.08em; font-size: 0.62em; color: var(--red); -webkit-text-stroke: 0; }
 .hero__title .hero__w { display: inline; }
 /* Phones: stack the words so the name can be much bigger */
 @media (max-width: 639.98px) {
-  .hero__title { font-size: 17vw; }
+  .hero__title { font-size: 15vw; }
   .hero__title .hero__w { display: block; }
-  .hero__title .hero__sub { margin-top: 0.2em; font-size: 0.62em; }
+  .hero__title .hero__sub { margin-top: 0.15em; font-size: 0.6em; }
 }
 
 .marquee {
@@ -1097,30 +1095,54 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 @media (max-width: 559.98px) { .contact__links { flex-direction: column; } .contact__links span { display: none; } }
 
-/* ---------- Hero background photos ---------- */
-.hero__panel { --photo-opacity: 0.22; isolation: isolate; }   /* raise or lower to taste */
-.hero__photos { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
-.hero__photo {
+/* ---------- Hero showreel (browser frame) ---------- */
+.hero__lede {
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.5vw, 1.1875rem);
+  line-height: 1.55;
+}
+.hero__frame {
+  width: min(100%, 62rem);
+  margin: clamp(1rem, 3vw, 2.25rem) 0 0;
+  background: var(--bg-2);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: 0 2rem 5rem -1.5rem rgba(229, 9, 20, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+.hero__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 0.9rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.hero__bar i { width: 0.65rem; height: 0.65rem; border-radius: 50%; background: var(--line-strong); }
+.hero__bar i:first-child { background: var(--red); }
+.hero__bar span { margin-left: 0.75rem; font: 500 0.75rem/1 var(--font-mono); letter-spacing: 0.08em; color: var(--muted); }
+.hero__screen { position: relative; aspect-ratio: 16 / 9; background: #000; }
+.hero__video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hero__play {
   position: absolute;
-  width: 34%;
-  max-width: none;
-  border-radius: 0.5rem;
-  opacity: var(--photo-opacity);
-  filter: grayscale(1) contrast(1.1);   /* grey photos read as a red tint over the panel */
+  left: 50%; top: 50%;
+  display: grid;
+  place-items: center;
+  width: clamp(3.5rem, 8vw, 5rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--red);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 0.5rem rgba(229, 9, 20, 0.28);
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s var(--ease), opacity 0.2s, box-shadow 0.25s var(--ease);
 }
-.hero__photo--a { left: -5%; bottom: -9%; transform: rotate(-9deg); }
-.hero__photo--b { right: -6%; top: -12%; transform: rotate(8deg); }
-.hero__photo--c { left: 2%; top: -20%; width: 27%; transform: rotate(6deg); }
-.hero__photo--d { right: 1%; bottom: -22%; width: 29%; transform: rotate(-6deg); }
-/* The portrait: same faint grey treatment, centred behind the name */
-.hero__photo--me { left: 50%; top: 50%; width: min(32%, 26rem); transform: translate(-50%, -50%) rotate(-3deg); }
-@media (max-width: 639.98px) {
-  .hero__photo { width: 74%; }
-  .hero__photo--me { width: 70%; }
-  .hero__photo--a { left: -22%; bottom: -8%; }
-  .hero__photo--b { right: -24%; top: -8%; }
-  .hero__photo--c, .hero__photo--d { display: none; }
-}
+.hero__play svg { width: 42%; fill: #fff; margin-left: 6%; }
+.hero__play:hover { transform: translate(-50%, -50%) scale(1.08); box-shadow: 0 0 0 0.75rem rgba(229, 9, 20, 0.28); }
+.hero__play:focus-visible { outline-color: #fff; }
+.hero__frame.is-playing .hero__play { opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .hero__video { display: none; } .hero__screen { background: var(--bg-2); } }
 
 /* On phones the project row is swiped, so the arrow buttons are hidden */
 @media (max-width: 639.98px) { .carousel__nav { display: none; } }

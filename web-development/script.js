@@ -355,6 +355,29 @@ const CONFIG = {
     });
   }
 
+  /* ---------- Hero showreel: the play button restarts it with sound and controls ---------- */
+  function initReel() {
+    const reel = $('[data-reel]');
+    if (!reel) return;
+    const video = $('video', reel);
+    const play = $('.hero__play', reel);
+    play.addEventListener('click', () => {
+      video.muted = false;
+      video.loop = false;
+      video.controls = true;
+      video.currentTime = 0;
+      reel.classList.add('is-playing');
+      video.play().catch(() => { video.muted = true; video.play(); });
+    });
+    video.addEventListener('ended', () => {
+      video.controls = false;
+      video.muted = true;
+      video.loop = true;
+      reel.classList.remove('is-playing');
+      video.play();
+    });
+  }
+
   /* ---------- Back to top + footer year ---------- */
   function initChrome() {
     const year = $('[data-year]');
@@ -369,7 +392,7 @@ const CONFIG = {
     }
   }
 
-  [initPointerFocus, initReloadToTop, initContact, initNav, initActiveLinks, initReveals, initMarquee, initCarousel, initBadges, initClickSound, initChrome].forEach((init) => {
+  [initPointerFocus, initReloadToTop, initContact, initNav, initActiveLinks, initReveals, initMarquee, initCarousel, initBadges, initClickSound, initReel, initChrome].forEach((init) => {
     try { init(); } catch (err) { console.error(err); }
   });
 })();
