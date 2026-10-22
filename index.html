@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#f4f7fb">
+    <meta name="theme-color" content="#f6f0e8">
     <meta name="description" content="Elijah Lord Andrei R. Flores (Elijah Flores) is a multimedia creator, marketer and web developer. Find his web development work, portfolio, LinkedIn, email and social links in one place.">
     <meta name="keywords" content="Elijah Lord Andrei R. Flores, Elijah Flores, Elijah R. Flores, Elijah, Elijah Flores web developer, Elijah Flores portfolio, Elijah Flores links, multimedia, marketing, web developer, full-stack developer">
     <meta name="author" content="Elijah Lord Andrei R. Flores">
@@ -33,6 +33,9 @@
     <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
     <link rel="icon" href="favicon.ico" sizes="48x48">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Instrument+Serif:ital@1&display=swap">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -76,7 +79,7 @@
                 <button class="theme-step prev" id="theme-prev" type="button" aria-label="Previous theme"><i data-icon="prev" class="fa-solid fa-chevron-left"></i></button>
                     <button class="theme-step next" id="theme-next" type="button" aria-label="Next theme"><i data-icon="next" class="fa-solid fa-chevron-right"></i></button>
             </div>
-            <h1 class="glitch" data-text="ELIJAH R. FLORES">ELIJAH R. FLORES</h1>
+            <h1 class="glitch" data-text="ELIJAH R. FLORES">ELIJAH <span class="name-accent">R. FLORES</span></h1>
             <p class="profile-bio" id="profile-bio">Multimedia creator, marketer and web developer building brands, content and websites.</p>
                         <div class="volume-control" id="volume-control" aria-label="Background music controls">
                 <button class="music-toggle" id="music-toggle" type="button" aria-label="Pause music">
@@ -163,7 +166,18 @@
         </section>
         -->
 
-        <nav class="link-grid" aria-label="Quick links">
+        <figure class="reel" data-reel>
+            <div class="reel-screen">
+                <video class="reel-video" src="video/marketing.mp4" poster="video/marketing-poster.webp" muted loop playsinline preload="none" aria-label="Showreel"></video>
+                <button class="reel-play" type="button" aria-label="Play showreel">
+                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                </button>
+            </div>
+            <figcaption class="reel-caption"><strong>Showreel</strong></figcaption>
+        </figure>
+
+        <nav class="link-grid group" aria-labelledby="grp-websites">
+            <h2 class="group-title" id="grp-websites">Websites</h2>
             <a href="web-development/" class="universal-btn" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i data-icon="web" class="fa-solid fa-code"></i>
@@ -172,7 +186,6 @@
                 <i data-icon="ext" class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
                 <div class="btn-shimmer"></div>
             </a>
-
             <a href="https://elijahportfolio.xyz" class="universal-btn" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i data-icon="portfolio" class="fa-solid fa-bolt"></i>
@@ -181,18 +194,46 @@
                 <i data-icon="ext" class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
                 <div class="btn-shimmer"></div>
             </a>
+        </nav>
 
+        <nav class="link-grid group" aria-labelledby="grp-socials">
+            <h2 class="group-title" id="grp-socials">Socials</h2>
+            <a href="https://wa.me/639694589629" class="universal-btn" target="_blank" rel="noopener noreferrer">
+                <div class="btn-content">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </div>
+                <i data-icon="ext" class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+                <div class="btn-shimmer"></div>
+            </a>
             <a href="https://www.linkedin.com/in/elijahlordandreiflores/" class="universal-btn" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i class="fa-brands fa-linkedin-in"></i>
-                    <span>Connect on LinkedIn</span>
+                    <span>LinkedIn</span>
+                </div>
+                <i data-icon="ext" class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+                <div class="btn-shimmer"></div>
+            </a>
+            <a href="https://www.instagram.com/primelordd" class="universal-btn" target="_blank" rel="noopener noreferrer">
+                <div class="btn-content">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                </div>
+                <i data-icon="ext" class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
+                <div class="btn-shimmer"></div>
+            </a>
+            <a href="https://www.facebook.com/dreiixx1/" class="universal-btn" target="_blank" rel="noopener noreferrer">
+                <div class="btn-content">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span>Facebook</span>
                 </div>
                 <i data-icon="ext" class="fa-solid fa-arrow-up-right-from-square btn-arrow"></i>
                 <div class="btn-shimmer"></div>
             </a>
         </nav>
 
-        <nav class="link-grid contact-grid" aria-label="Contact links">
+        <nav class="link-grid group contact-grid" aria-labelledby="grp-email">
+            <h2 class="group-title" id="grp-email">Email</h2>
             <a href="mailto:elijahflores0204@gmail.com" class="universal-btn" target="_blank" rel="noopener noreferrer">
                 <div class="btn-content">
                     <i data-icon="mail" class="fa-solid fa-envelope"></i>
@@ -200,23 +241,6 @@
                 </div>
                 <i data-icon="send" class="fa-solid fa-paper-plane btn-arrow"></i>
                 <div class="btn-shimmer"></div>
-            </a>
-        </nav>
-
-        <nav class="social-grid" aria-label="Social links">
-            <a href="https://www.instagram.com/primelordd" class="social-chip" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <i class="fa-brands fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
-
-            <a href="https://www.facebook.com/dreiixx1/" class="social-chip" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                <i class="fa-brands fa-facebook-f"></i>
-                <span>Facebook</span>
-            </a>
-
-            <a href="https://wa.me/639694589629" class="social-chip" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                <i class="fa-brands fa-whatsapp"></i>
-                <span>WhatsApp</span>
             </a>
         </nav>
 
@@ -231,11 +255,13 @@
 
     <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
         <i data-icon="top" class="fa-solid fa-chevron-up"></i>
+        <span>Back to top</span>
     </button>
 
     <script src="theme.js"></script>
     <script src="script.js"></script>
     <script src="spider-web.js"></script>
+    <script src="reel.js" defer></script>
     <!-- <script src="slideshow.js"></script> -->
   <script src="/inapp.js" defer></script>
 </body>

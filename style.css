@@ -1712,3 +1712,127 @@ html[data-theme="default"] footer { color: rgba(15, 23, 42, 0.55); }
 html[data-theme="default"] .footer-credit a { text-decoration-color: rgba(15, 23, 42, 0.3); }
 html[data-theme="default"] .theme-step { color: #fff; background: radial-gradient(circle at 30% 25%, #3b82f6, #1e40af); box-shadow: 0 6px 16px rgba(37, 99, 235, 0.35); }
 html[data-theme="default"] .back-to-top { background: #fff; color: var(--chrome); }
+
+/* Marketing showreel card */
+.reel { position: relative; margin: 0 0 12px; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius); background: var(--panel-strong); box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45), var(--shadow-red); overflow: hidden; }
+.reel-screen { position: relative; aspect-ratio: 16 / 9; background: #000; }
+.reel-video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.reel-play {
+    position: absolute; left: 50%; top: 50%; display: grid; place-items: center;
+    width: 64px; height: 64px; border-radius: 50%;
+    background: var(--red); color: #fff; font-size: 1.3rem; padding-left: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 8px rgba(var(--red-rgb), 0.28), 0 0 28px rgba(var(--red-rgb), 0.6);
+    transform: translate(-50%, -50%); cursor: pointer;
+    transition: transform 200ms ease, opacity 200ms ease;
+}
+.reel-play:hover { transform: translate(-50%, -50%) scale(1.08); }
+.reel.is-playing .reel-play { opacity: 0; pointer-events: none; }
+
+/* Desktop: profile card stays put while the right column (video first) scrolls */
+@media (min-width: 960px) {
+    .container > .profile { position: sticky; top: 32px; align-self: start; grid-row: 1 / span 4; }
+    .container > .reel { grid-column: 2; grid-row: 1; align-self: start; margin-bottom: 12px; }
+    .container > .link-grid { grid-row: 2; align-self: start; }
+    .container > .contact-grid { grid-row: 3; align-self: start; }
+    .container > .social-grid { grid-row: 4; align-self: start; }
+}
+
+/* ---------- Default theme, restyled to match the showreel branding ----------
+   Warm cream, near-black ink, electric blue + periwinkle, tight bold sans with a serif italic accent. */
+html[data-theme="default"] {
+    --void: #f6f0e8; --void-2: #fffdf9; --ink: #0a0a14;
+    --panel: rgba(255, 253, 249, 0.8); --panel-strong: #fffdf9;
+    --chrome: #0a0a14; --muted: rgba(10, 10, 20, 0.62); --faint: rgba(10, 10, 20, 0.12);
+    --red: #3b5bff; --red-rgb: 59, 91, 255; --accent2: #6b7cff;
+    --electric: #8b9bff; --electric-rgb: 139, 155, 255; --cyan: #8b9bff; --cyan-rgb: 139, 155, 255;
+    --bg-a: #f6f0e8; --bg-b: #f3eeee; --bg-c: #e9ebfb;
+    --radius: 18px;
+    --shadow-red: 0 14px 34px rgba(var(--red-rgb), 0.16);
+    --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+}
+html[data-theme="default"] .space-background {
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 38%, rgba(var(--electric-rgb), 0.32), transparent 70%),
+        radial-gradient(ellipse 40% 35% at 90% 100%, rgba(var(--red-rgb), 0.12), transparent 70%),
+        linear-gradient(180deg, var(--bg-a), var(--bg-b) 55%, var(--bg-c));
+}
+html[data-theme="default"] .signal-pill { border-color: transparent; background: transparent; color: var(--red); padding-inline: 0; letter-spacing: 0.22em; }
+html[data-theme="default"] .profile { border-radius: 28px; background: rgba(255, 253, 249, 0.72); border-color: rgba(10, 10, 20, 0.08); box-shadow: 0 30px 70px -20px rgba(var(--red-rgb), 0.22), 0 2px 0 rgba(255, 255, 255, 0.8) inset; }
+html[data-theme="default"] .profile::before { opacity: 0; }
+html[data-theme="default"] h1 { font-weight: 900; letter-spacing: -0.04em; line-height: 0.95; color: var(--ink); }
+html[data-theme="default"] .profile-bio { max-width: 360px; font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 1.3rem; line-height: 1.25; color: var(--red); letter-spacing: 0; }
+html[data-theme="default"] .universal-btn, html[data-theme="default"] .social-chip {
+    border-radius: 16px; background: #fffdf9; border-color: rgba(10, 10, 20, 0.08);
+    box-shadow: 0 10px 28px -12px rgba(10, 10, 20, 0.2); backdrop-filter: none;
+}
+html[data-theme="default"] .link-grid .universal-btn { background: var(--ink); color: #fff; border-color: var(--ink); }
+html[data-theme="default"] .link-grid .universal-btn i { color: var(--electric); }
+html[data-theme="default"] .btn-content span { font-weight: 800; letter-spacing: -0.01em; }
+@media (hover: hover) {
+    html[data-theme="default"] .universal-btn:hover, html[data-theme="default"] .social-chip:hover { border-color: var(--red); box-shadow: 0 16px 34px -12px rgba(var(--red-rgb), 0.45); }
+}
+html[data-theme="default"] .reel { border-radius: 22px; background: #fffdf9; border-color: rgba(10, 10, 20, 0.08); box-shadow: 0 30px 60px -24px rgba(var(--red-rgb), 0.4); }
+html[data-theme="default"] .reel-play { background: var(--red); box-shadow: 0 0 0 8px rgba(var(--red-rgb), 0.22), 0 14px 30px rgba(var(--red-rgb), 0.5); }
+html[data-theme="default"] .theme-toggle, html[data-theme="default"] .theme-step { background: var(--ink); box-shadow: 0 10px 26px rgba(10, 10, 20, 0.3); }
+html[data-theme="default"] .back-to-top { background: var(--ink); color: #fff; }
+html[data-theme="default"] .volume-control { background: #fffdf9; border-color: rgba(10, 10, 20, 0.08); border-radius: 999px; }
+html[data-theme="default"] footer { color: rgba(10, 10, 20, 0.55); }
+
+/* Showreel title */
+.reel-caption { padding: 9px 16px 11px; }
+.reel-caption strong { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; }
+
+/* Default theme, round two: dark navy profile card (the video's night scenes) on the cream page */
+html[data-theme="default"] .link-grid .universal-btn span { color: #fff; }
+html[data-theme="default"] .profile {
+    background:
+        radial-gradient(ellipse 80% 55% at 50% 0%, rgba(var(--red-rgb), 0.5), transparent 70%),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(var(--electric-rgb), 0.22), transparent 70%),
+        #070b1f;
+    border-color: rgba(var(--electric-rgb), 0.22);
+    box-shadow: 0 40px 80px -24px rgba(7, 11, 31, 0.55);
+    color: #fff;
+}
+html[data-theme="default"] .profile h1 { color: #fff; }
+html[data-theme="default"] .profile h1 .name-accent { color: var(--electric); }
+html[data-theme="default"] .profile .profile-bio { color: #c9d1ff; }
+html[data-theme="default"] .profile .signal-pill { color: var(--electric); }
+html[data-theme="default"] .profile .volume-control { background: rgba(255, 255, 255, 0.07); border-color: rgba(255, 255, 255, 0.14); color: #fff; }
+html[data-theme="default"] .profile .volume-control span { color: rgba(255, 255, 255, 0.75); }
+html[data-theme="default"] .profile .theme-step { background: rgba(255, 255, 255, 0.12); box-shadow: none; border: 1px solid rgba(255, 255, 255, 0.25); }
+html[data-theme="default"] .profile-frame::before { border-color: rgba(var(--electric-rgb), 0.5); }
+html[data-theme="default"] .profile #vol-percentage { color: rgba(255, 255, 255, 0.8); }
+
+/* Social buttons: icon only, bigger */
+.social-chip { min-height: 84px; }
+.social-chip span { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.social-chip i { width: auto; height: auto; font-size: 2.1rem; }
+@media (min-width: 960px) { .social-chip { min-height: 96px; } .social-chip i { font-size: 2.4rem; } }
+html[data-theme="default"] .social-chip { background: var(--ink); border-color: var(--ink); }
+html[data-theme="default"] .social-chip i { color: var(--electric); }
+
+/* Back to top: small labelled pill at the bottom middle on phones and tablets */
+.back-to-top span { display: none; }
+@media (max-width: 959.98px) {
+    .back-to-top {
+        right: auto; left: 50%; bottom: 14px; width: auto; height: auto; padding: 8px 14px; gap: 6px;
+        grid-auto-flow: column; transform: translate(-50%, 10px);
+    }
+    .back-to-top.is-visible { transform: translate(-50%, 0); }
+    .back-to-top i { font-size: 0.7rem; }
+    .back-to-top span { display: inline; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+}
+
+/* Grouped buttons: Websites / Socials / Email */
+.group-title { margin: 0 2px 2px; color: var(--muted); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; }
+.group .universal-btn:nth-of-type(n) { animation-delay: 420ms; }
+.group + .group { margin-top: 18px; }
+@media (min-width: 960px) {
+    .container > .group { grid-column: 2; align-self: start; margin-top: 0; margin-bottom: 18px; }
+    .container > .group:nth-of-type(1) { grid-row: 2; }
+    .container > .group:nth-of-type(2) { grid-row: 3; }
+    .container > .group:nth-of-type(3) { grid-row: 4; }
+}
+.reel + .group { margin-top: 20px; }
+@media (min-width: 960px) { .container > .reel + .group { margin-top: 8px; } }
