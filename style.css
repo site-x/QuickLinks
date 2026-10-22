@@ -1836,3 +1836,9 @@ html[data-theme="default"] .social-chip i { color: var(--electric); }
 }
 .reel + .group { margin-top: 20px; }
 @media (min-width: 960px) { .container > .reel + .group { margin-top: 8px; } }
+
+/* Older in-app browsers (Facebook/Instagram on older phones) without aspect-ratio: keep the video box 16:9 */
+@supports not (aspect-ratio: 16 / 9) {
+    .reel-screen { height: 0; padding-top: 56.25%; }
+    .reel-video { position: absolute; top: 0; left: 0; }
+}
